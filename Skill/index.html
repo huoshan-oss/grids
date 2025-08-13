@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRID - Business</title>
+    <link rel="stylesheet" href="../mobile.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <script src="../js/mobile.js"></script>
+    <style>
+    /* 添加在原有样式之后 */
+    .bold-line {
+        font-weight: bold;
+      }
+    
+        
+    .salary-info p {
+        margin-bottom: 20px; /* 两个 p 之间的间距（数值可改，如20px/30px） */
+        margin-top: 0; /* 避免顶部间距叠加 */
+        }
+       
+    .salary-info p:last-of-type {
+        margin-bottom: 0;
+        }
+      .bold-line {
+        font-weight: bold;
+      }
+
+      .rectangle-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px; /* 矩形间距 */
+        margin-top: 24px;
+        margin-bottom: 16px;
+        /* 核心控制：计算容器最大宽度 = 2个矩形宽度 + 间距 */
+        max-width: calc(2 * (330px + 30px) + 16px); /* 100px(宽)+30px(左内边距) + 16px(间距) */
+      }
+
+      .custom-rectangle {
+        width: 330px;        /* 宽度100px */
+        height: 60px;        /* 高度60px */
+        border-radius: 9999px; /* 左右圆角效果 */
+        background-color: #f0f5ff; /* 背景色（蓝色） */
+        display: flex;       /* 启用flex布局 */
+        align-items: center; /* 垂直居中 */
+        padding-left: 30px;  /* 左边30px距离 */
+        margin-top: 0px;
+        margin-bottom: 8px; /* 与下方标题的间距 */
+      }
+      .custom-rectangle span {
+        color: #333333;
+        text-align: left;
+        font-size: 14px; 
+      }
+
+    .content-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 20px auto;
+      transition: all 0.3s ease;
+      max-width: 1000px;
+    }
+
+    
+    .section-title {
+      color: #2c3e50;
+      border-left: 4px solid #3498db;
+      padding-left: 15px;
+      margin: 25px 0 15px;
+    }
+    
+    .salary-info, .holiday-info, .welfare-info {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    </style>
+    <style>
+    @media (max-width: 768px) {
+      .content-section {
+        padding: 20px;
+        margin: 15px 10px;
+      }
+      
+      .recruit-image img {
+        width: 308px;  
+        height: 160px; 
+        border-radius: 8px; 
+        object-fit: cover;
+      }
+      
+      .section-title {
+        font-size: 1.3rem;
+      }
+      
+      .salary-info, .holiday-info, .welfare-info {
+        padding: 10px;
+      }
+    }
+    </style>
+  </head>
+  <body class="business-page">
+    <div class="container">
+      <!-- mobile-header 头部 -->
+      <div class="mobile-header">
+        <!-- 左侧BUSINESS文字和背景 -->
+        <div class="side-text">
+          <div class="vertical-text">SKILL</div>
+        </div>
+        <!-- 将logo移到这里 -->
+        <img
+          src="../images/logo.png"
+          alt="GRID Logo"
+          class="logo"
+          onclick="window.location.href='../index.html';"
+        />
+      </div>
+
+      <!-- 添加Business标题 -->
+      <div class="page-title">Skill</div>
+
+      <!-- 左侧导航区域 -->
+      <div class="left-nav">
+        <!-- 第一个导航 -->
+        <div class="nav-box grid-style">
+          <img
+            src="../images/Salesforce1.png"
+            alt="Image 1"
+            class="grid-image default-image"
+          />
+          <img
+            src="../images/Salesforce2.png"
+            alt="Image 2"
+            class="grid-image hover-image"
+          />
+          <div class="overlay-images">
+            <img
+              src="../images/Salesforce3.png"
+              alt="Image 3"
+              class="grid-image overlay-top"
+            />
+            <img
+              src="../images/Salesforce4.png"
+              alt="Image 4"
+              class="grid-image overlay-bottom"
+              onclick="event.stopPropagation();"
+            />
+          </div>
+        </div>
+
+        <!-- 第二个导航 -->
+        <div class="nav-box grid-style">
+          <img
+            src="../images/Databricks1.png"
+            alt="Timeline 1"
+            class="grid-image default-image"
+          />
+          <img
+            src="../images/Databricks2.png"
+            alt="Timeline 2"
+            class="grid-image hover-image"
+          />
+          <div class="overlay-images">
+            <img
+              src="../images/Databricks3.png"
+              alt="Timeline 3"
+              class="grid-image overlay-top"
+            />
+            <img
+              src="../images/Databricks4.png"
+              alt="Timeline 4"
+              class="grid-image overlay-bottom"
+              onclick="event.stopPropagation();"
+            />
+          </div>
+        </div>
+
+        <!-- 第三个导航 -->
+         <div class="nav-box grid-style"> 
+          <img
+            src="../images/SD1.png"
+            alt="Image 1"
+            class="grid-image default-image"
+          />
+          <img
+            src="../images/SD2.png"
+            alt="Image 2"
+            class="grid-image hover-image"
+          />
+          <div class="overlay-images">
+            <img
+              src="../images/SD3.png"
+              alt="Image 3"
+              class="grid-image overlay-top"
+            />
+            <img
+              src="../images/SD4.png"
+              alt="Image 4"
+              class="grid-image overlay-bottom"
+              onclick="event.stopPropagation();"
+            />
+          </div>
+        </div>
+
+        <!-- 第四个导航 -->
+         <!-- <div class="nav-box grid-style">  
+          <img
+            src="../images/Generalist1.png"
+            alt="Image 1"
+            class="grid-image default-image"
+          />
+          <img
+            src="../images/Generalist2.png"
+            alt="Image 2"
+            class="grid-image hover-image"
+          />
+          <div class="overlay-images">
+            <img
+              src="../images/Generalist3.png"
+              alt="Image 3"
+              class="grid-image overlay-top"
+            />
+            <img
+              src="../images/Generalist4.png"
+              alt="Image 4"
+              class="grid-image overlay-bottom"
+              onclick="event.stopPropagation();"
+            />
+          </div>
+        </div>-->
+      </div>
+
+
+    
+     <!-- mobile主内容区域 -->
+     <div class="main-content mobile-content">
+      <div class="content-section mobile-content-step si-content">
+        <div class="recruit-image">
+          <img
+            src="../images/salesforce.jpg"
+            alt="System Optimization"
+          />
+        </div>
+
+        <h2 class="section-title">Salesforce+180 資格保有数</h2>
+        <div class="salary-info">
+          <p>◇ <span class="bold-line">Salesforceの深い知識と経験を持つ資格取得者は、お客様のSalesforce活⽤を最⼤限に引き出します。
+    
+        </div>
+           
+        <div class="rectangle-container">
+          <!-- 第一个矩形 -->
+          <div class="custom-rectangle">
+            <span>・Salesforce認定上級アドミニストレーター</span>
+          </div>
+          <!-- 第二个矩形 -->
+          <div class="custom-rectangle">
+            <span>・Salesforce認定Sales Cloudコンサルタント</span>
+          </div>
+          <!-- 第三个矩形（会自动换行到第二列） -->
+          <div class="custom-rectangle">
+            <span>・認定Community Cloudコンサルタント</span>
+          </div>
+          
+          <div class="custom-rectangle">
+            <span>・Salesforce認定Platfomデベロッパー</span>
+          </div>
+
+          <div class="custom-rectangle">
+            <span>・Salesforce認定Platfomアプリケーション</span>
+          </div>
+
+          <div class="custom-rectangle">
+            <span>・Salesforce認定Service Cloudコンサルタント</span>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="content-section mobile-content-step dx-content"
+        style="display: none"
+      >
+        <div class="recruit-image">
+          <img src="../images/databricks.jpg" alt="Process Optimization" />
+        </div>
+
+        <h2 class="section-title">Databricks+17 資格保有数</h2>
+        <div class="salary-info">
+          <p>◇ <span class="bold-line">Databricksの専⾨知識を持ち、⾼度なデータエンジニアリング能⼒を証明する資格保有者が、最新のデータ基盤構築を⽀援します。
+    
+        </div>
+           
+        <div class="rectangle-container">
+          <!-- 第一个矩形 -->
+          <div class="custom-rectangle">
+            <span>・Databricks Certified Data Engineer Associate</span>
+          </div>
+          <!-- 第二个矩形 -->
+          <div class="custom-rectangle">
+            <span>・ Databricks Certified Data Engineer Professional</span>
+          </div>
+         
+        </div>
+      </div>
+
+     <div 
+        class="content-section mobile-content-step infra-content"
+        style="display: none"
+      >
+        <div class="recruit-image">
+          <img src="../images/SD11.jpg" alt="New Graduate Education" />
+        </div>
+
+        <h2 class="section-title">Salesforce+Databricks+17 資格保有数</h2>
+        <div class="salary-info">
+          <p>◇ <span class="bold-line">Databricksの資格取得者全員がSalesforceの知識と実績を持ってお
+            り、両プラットフォームを効果的に連携させた総合ソリューション
+            の設計・構築が可能です。
+    
+        </div>
+            
+        <div class="rectangle-container">
+          <!-- 第一个矩形 -->
+          <div class="custom-rectangle">
+            <span>・Databricks +Salesforce複合スキル</span>
+          </div>
+          <!-- 第二个矩形 -->
+      
+        </div>
+      </div>
+
+       <!-- <div  
+        class="content-section mobile-content-step security-content"
+        style="display: none"
+      >
+        <div class="recruit-image">
+          <img
+            src="../images/5d00bc5a2f2.jpg"
+            alt="System Optimization"
+          />
+        </div>
+
+        <h2 class="section-title">総合職</h2>
+          <div class="salary-info">
+            <p>◇ <span class="bold-line">仕事内容</span><br>・顧客対応（電話/メール/来客）
+              <br>・事務作業（資料作成、データ入力、経理補助）
+              <br> ・営業サポート（見積もり作成、契約書準備）
+              <br> ・商品管理（発注、在庫確認）
+              <br> ・簡単なWeb更新（WordPress等） 
+              <br>※業務範囲は適性により調整します</p>
+            <p>◇ <span class="bold-line">応募資格・条件</span><br>学歴不問 / 経験者のみ募集
+              </p>
+            <p>◇ <span class="bold-line">募集人数</span><br>業務拡大と伴い、1名以上の増員を計画しています。</p>
+            <p>◇ <span class="bold-line">勤務地/アクセス</span><br>東京都中央区八丁堀3丁目-JP-BASE京橋  2階
+              <br>◇ 銀座線 「京橋」駅 徒歩 6分、
+              日比谷線 「八丁堀」駅 徒歩 3分、
+              都営浅草線 「宝町」駅 徒歩 3分、
+              JR京葉線 「八丁堀」駅 徒歩 3分 </p>
+            <p>◇ <span class="bold-line">勤務時間</span><br>フレックスタイム制
+              <br>フレックスタイム制
+              <br>完全週休二日制で土日祝は休日ですが、多忙期には休日出勤して頂き、代休を取って頂く場合もございます
+              <br>標準労働時間：7.5時間業務+1時間休憩
+              <br>コアタイム10:00~16:00
+              <br>※現在は主にリモート勤務を推奨しており、社員の約9割が在宅勤務中です</p>
+            <p>◇ <span class="bold-line">給与</span><br>年俸 3,000,000円 ～ 6,000,000円
+              <br>月給 250,000円 ～ 500,000円 （※想定年収 3,000,000円 ～ 6,000,000円）
+              <br>年齢・経験を考慮して優遇します </p> 
+            <p>◇ <span class="bold-line">休日休暇</span><br>年間休日120日以上
+              <br>完全週休二日制
+              <br>有給休暇（入社半年後に付与）
+              <br>介護休暇
+              <br>育児休暇
+              <br>慶弔休暇 </p> 
+            <p>◇ <span class="bold-line">福利厚生</span><br>年俸制:300万円~400万円を12分割し月給として支給
+              <br>社会保険完備
+              <br>交通費全額支給
+              <br>年1回の健康診断は会社全額負担
+              <br>昇給年1回
+              <br>社員旅行
+              <br>帰省手当支給(最大10万円/年を全員に支給)
+              <br>資格取得補助
+              <br>不定期業績ボーナス支給あり(半期毎に1回、利益状況に応じて)
+              <br>退職金制度あり
+              <br>服装自由
+              <br>ネイルOK </p> 
+      </div>
+      </div>-->
+    </div>
+  </div>
+
+  <!-- PC端内容容器 -->
+  <div class="business-content pc-content">
+    <div class="content-section content-section-step si-content">
+      <div class="recruit-image" style="text-align: center;background:#fff url(../images/salesforce.jpg) no-repeat center center; background-size: cover; height: 200px;margin: 0 auto; border-radius: 10px;position: relative;">
+        <!-- <img src="images/ai.jpg" alt="AI Engineer"> -->
+          </div>
+
+          <h2 class="section-title">Salesforce+180 資格保有数</h2>
+          <div class="salary-info">
+            <p>◇ <span class="bold-line">Salesforceの深い知識と経験を持つ資格取得者は、お客様のSalesforce活⽤を最⼤限に引き出します。
+      
+          </div>
+             
+          <div class="rectangle-container">
+            <!-- 第一个矩形 -->
+            <div class="custom-rectangle">
+              <span>・Salesforce認定上級アドミニストレーター</span>
+            </div>
+            <!-- 第二个矩形 -->
+            <div class="custom-rectangle">
+              <span>・Salesforce認定Sales Cloudコンサルタント</span>
+            </div>
+            <!-- 第三个矩形（会自动换行到第二列） -->
+            <div class="custom-rectangle">
+              <span>・認定Community Cloudコンサルタント</span>
+            </div>
+            
+            <div class="custom-rectangle">
+              <span>・Salesforce認定Platfomデベロッパー</span>
+            </div>
+
+            <div class="custom-rectangle">
+              <span>・Salesforce認定Platfomアプリケーション</span>
+            </div>
+
+            <div class="custom-rectangle">
+              <span>・Salesforce認定Service Cloudコンサルタント</span>
+            </div>
+          </div>
+
+          
+    </div>
+
+    
+    <div
+      class="content-section content-section-step si-content"
+      style="display: none"
+    >
+    <div class="recruit-image" style="text-align: center;background:#fff url(../images/databricks.jpg) no-repeat center center; background-size: cover; height: 200px;margin: 0 auto; border-radius: 10px;position: relative;">
+      <!-- <img src="images/ai.jpg" alt="AI Engineer"> -->
+        </div>
+
+        <h2 class="section-title">Databricks+17 資格保有数</h2>
+        <div class="salary-info">
+          <p>◇ <span class="bold-line">Databricksの専⾨知識を持ち、⾼度なデータエンジニアリング能⼒を証明する資格保有者が、最新のデータ基盤構築を⽀援します。
+    
+        </div>
+           
+        <div class="rectangle-container">
+          <!-- 第一个矩形 -->
+          <div class="custom-rectangle">
+            <span>・Databricks Certified Data Engineer Associate</span>
+          </div>
+          <!-- 第二个矩形 -->
+          <div class="custom-rectangle">
+            <span>・ Databricks Certified Data Engineer Professional</span>
+          </div>
+         
+        </div>
+      <!-- <h2 class="section-title">環境</h2> 
+      <div class="salary-info">
+        <p>◇ <span class="bold-line">エネルギー効率化ソリューション</span><br>AIoTプラットフォームを活用し、センサー×クラウドでオフィスや工場のエネルギー消費を可視化・最適制御。
+            CO₂排出量削減と運用コスト低減を実現します</p>
+        <p>◇ <span class="bold-line">グリーンモビリティ推進</span><br>Smarteev社のスマート充電インフラと連携し、再生可能エネルギー由来の電力でEVを充電。
+            地域の脱炭素交通網形成に貢献します</p>
+        <p>◇ <span class="bold-line">環境モニタリング・ソリューション</span><br>ウェアラブルや固定センサーによる大気・水質・騒音モニタリングサービスを開発
+            し、自治体や企業と共同で環境保全プロジェクトを推進します</p>
+            
+      </div>
+
+       <h2 class="section-title">社会貢献</h2> 
+      <div class="salary-info">
+        <p>◇ <span class="bold-line">次世代人材育成プログラム</span><br>CRM×AI×Dataの知見を活かしたワークショップ／ハンズオン研修を開催。
+            SalesforceやDatabricksを用いた分析・開発スキルを若手エンジニアに無償提供し、デジタル人材の裾野拡大を支援します</p>
+        <p>◇ <span class="bold-line">地域連携スマートシティ開発</span><br>地方自治体と連携し、IoTセンサーによるインフラ監視やコミュニティWi-Fiの整備を実施。
+            住民説明会やワークショップを通じて、地域課題解決型の社会実装を加速します</p>
+        <p>◇ <span class="bold-line">デジタル教育支援</span><br>全国の教育機関向けに、オンライン学習プラットフォームやCRMベースの生徒管理システムを無償・低価格で導入。
+            教職員向けの運用トレーニングも実施し、DX化を後押しします</p>
+      </div>
+
+      <h2 class="section-title">ガバナンス</h2>
+      <div class="salary-info">
+        <p>◇ <span class="bold-line">コーポレートガバナンス方針</span><br>技術とデータを武器に、取締役会によるリスクレビューを四半期ごとに実施。
+            環境・社会・ガバナンス（ESG）目標を経営指標に連動させ、取締役報酬にも反映します</p>
+        <p>◇ <span class="bold-line">リスク管理体制</span><br>ISO27001（情報セキュリティ）、プライバシーマーク取得企業として、個人情報・機密データの取り扱いを厳格化。
+            サイバー攻撃や災害リスクに対するBCP（事業継続計画）も策定・演習を定期実施しています</p>
+        <p>◇ <span class="bold-line">Pマークポリシー</span><br>プライバシーマーク制度に則り、個人情報保護に関する内部規程を整備。
+            全社員への年1回以上の研修を義務付け、外部監査による運用状況の定期的なレビューを行っています</p>
+      </div>-->
+    </div>
+
+     <div 
+      class="content-section content-section-step infra-content"
+      style="display: none"
+    >
+    <div class="recruit-image" style="text-align: center;background:#fff url(../images/SD11.jpg) no-repeat center center; background-size: cover; height: 200px;margin: 0 auto; border-radius: 10px;position: relative;">
+      
+        </div>
+
+        <h2 class="section-title">Salesforce+Databricks+17 資格保有数</h2>
+        <div class="salary-info">
+          <p>◇ <span class="bold-line">Databricksの資格取得者全員がSalesforceの知識と実績を持ってお
+            り、両プラットフォームを効果的に連携させた総合ソリューション
+            の設計・構築が可能です。
+    
+        </div>
+            
+        <div class="rectangle-container">
+          <!-- 第一个矩形 -->
+          <div class="custom-rectangle">
+            <span>・Databricks +Salesforce複合スキル</span>
+          </div>
+          <!-- 第二个矩形 -->
+      
+        </div>
+    </div>
+
+     <!-- <div  
+      class="content-section content-section-step security-content"
+      style="display: none"
+    >
+    <div class="recruit-image" style="text-align: center;background:#fff url(../images/5d00bc5a2f2.jpg) no-repeat center center; background-size: cover; height: 200px;margin: 0 auto; border-radius: 10px;position: relative;">
+       
+          </div>
+
+          <h2 class="section-title">総合職</h2>
+          <div class="salary-info">
+            <p>◇ <span class="bold-line">仕事内容</span><br>・顧客対応（電話/メール/来客）
+              <br>・事務作業（資料作成、データ入力、経理補助）
+              <br> ・営業サポート（見積もり作成、契約書準備）
+              <br> ・商品管理（発注、在庫確認）
+              <br> ・簡単なWeb更新（WordPress等） 
+              <br>※業務範囲は適性により調整します</p>
+            <p>◇ <span class="bold-line">応募資格・条件</span><br>学歴不問 / 経験者のみ募集
+              </p>
+            <p>◇ <span class="bold-line">募集人数</span><br>業務拡大と伴い、1名以上の増員を計画しています。</p>
+            <p>◇ <span class="bold-line">勤務地/アクセス</span><br>東京都中央区八丁堀3丁目-JP-BASE京橋  2階
+              <br>◇ 銀座線 「京橋」駅 徒歩 6分、
+              日比谷線 「八丁堀」駅 徒歩 3分、
+              都営浅草線 「宝町」駅 徒歩 3分、
+              JR京葉線 「八丁堀」駅 徒歩 3分 </p>
+            <p>◇ <span class="bold-line">勤務時間</span><br>フレックスタイム制
+              <br>フレックスタイム制
+              <br>完全週休二日制で土日祝は休日ですが、多忙期には休日出勤して頂き、代休を取って頂く場合もございます
+              <br>標準労働時間：7.5時間業務+1時間休憩
+              <br>コアタイム10:00~16:00
+              <br>※現在は主にリモート勤務を推奨しており、社員の約9割が在宅勤務中です</p>
+            <p>◇ <span class="bold-line">給与</span><br>年俸 3,000,000円 ～ 6,000,000円
+              <br>月給 250,000円 ～ 500,000円 （※想定年収 3,000,000円 ～ 6,000,000円）
+              <br>年齢・経験を考慮して優遇します </p> 
+            <p>◇ <span class="bold-line">休日休暇</span><br>年間休日120日以上
+              <br>完全週休二日制
+              <br>有給休暇（入社半年後に付与）
+              <br>介護休暇
+              <br>育児休暇
+              <br>慶弔休暇 </p> 
+            <p>◇ <span class="bold-line">福利厚生</span><br>年俸制:300万円~400万円を12分割し月給として支給
+              <br>社会保険完備
+              <br>交通費全額支給
+              <br>年1回の健康診断は会社全額負担
+              <br>昇給年1回
+              <br>社員旅行
+              <br>帰省手当支給(最大10万円/年を全員に支給)
+              <br>資格取得補助
+              <br>不定期業績ボーナス支給あり(半期毎に1回、利益状況に応じて)
+              <br>退職金制度あり
+              <br>服装自由
+              <br>ネイルOK </p> 
+      </div>
+
+      <!-- <h2 class="section-title">専門スキル</h2> 
+      <div class="holiday-info">
+        <p>◇ プロジェクト統括管理</p>
+        <p>◇ リスクマネジメント</p>
+        <p>◇ 品質管理手法</p>
+        <p>◇ コスト管理</p>
+        <p>◇ スケジュール管理</p>
+        <p>◇ ステークホルダー管理</p>
+      </div>
+
+      <h2 class="section-title">高度育成プログラム</h2>
+      <div class="welfare-info">
+        <p>◇ アドバンスドPM研修</p>
+        <p>◇ グローバル人材育成</p>
+        <p>◇ イノベーション創出</p>
+        <p>◇ デジタル変革推進</p>
+        <p>◇ 組織開発手法</p>
+        <p>◇ 次世代リーダー育成</p>
+        <p>◇ 経営戦略立案</p>
+        <p>◇ 高度技術マネジメント</p>
+        <p>◇ エグゼクティブ育成</p>
+      </div>
+    </div>-->
+  </div>
+
+    <script>
+      function setScale() {
+        const container = document.querySelector(".container");
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        const baseScaleX = windowWidth / 1920;
+        const baseScaleY = windowHeight / 1080;
+        let scale = Math.min(baseScaleX, baseScaleY);
+
+        // 调整logo位置
+        const logo = document.querySelector(".logo");
+        if (windowHeight <= 800) {
+          logo.style.top = "120px"; // 小屏幕上的位置
+        } else {
+          logo.style.top = "100px"; // 正常屏幕上的位置
+        }
+
+        // 大屏幕不缩放
+        if (windowWidth >= 1920 && windowHeight >= 1080) {
+          scale = 1;
+        } else {
+          // 限制最小缩放比例为0.65
+          scale = Math.max(scale, 0.65);
+        }
+
+        document.documentElement.style.setProperty("--scale-ratio", scale);
+      }
+
+      function debounce(func, wait) {
+        let timeout;
+        return function () {
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(this, arguments), wait);
+        };
+      }
+
+      window.addEventListener("resize", debounce(setScale, 100));
+      window.addEventListener("load", setScale);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 获取所有grid-style导航和内容区域
+        const gridNavs = document.querySelectorAll(".nav-box.grid-style");
+        const contentSections = document.querySelectorAll(".content-section-step");
+        const mobileContentSections = document.querySelectorAll(".mobile-content-step");
+        // 默认显示第一个内容
+        contentSections[0].style.display = "block";
+
+        // 添加调试日志函数
+        function debugLog(message) {
+          console.log("[ScrollDebug]", message);
+        }
+
+        gridNavs.forEach((gridNav, index) => {
+          gridNav.addEventListener("click", function (event) {
+            event.stopPropagation();
+            let targetContent;
+
+            if (isMobile()) {
+              // 切换内容显示
+              mobileContentSections.forEach((section, sectionIndex) => {
+                const isActive = sectionIndex === index;
+                section.style.display = isActive ? "block" : "none";
+                if (isActive) {
+                  targetContent = section;
+                  debugLog("Mobile content activated: " + sectionIndex);
+                }
+              });
+            } else {
+              // 切换内容显示
+              contentSections.forEach((section, sectionIndex) => {
+                const isActive = sectionIndex === index;
+                section.style.display = isActive ? "block" : "none";
+                if (isActive) {
+                  targetContent = section;
+                  debugLog("Desktop content activated: " + sectionIndex);
+                }
+              });
+            }
+
+            // 关键修复：增加延迟确保内容完全渲染
+            setTimeout(() => {
+              if (!targetContent) {
+                debugLog("Target content not found");
+                return;
+              }
+
+              // 1. 强制重置页面滚动
+              window.scrollTo(0, 0); // 使用非平滑滚动确保兼容性
+              debugLog("Page scroll reset");
+
+              // 2. 查找并重置所有可能的滚动容器
+              const scrollContainers = targetContent.querySelectorAll(".salary-info, .holiday-info, .welfare-info, div[style*='overflow-y'], div[style*='overflow-x']");
+              
+              if (scrollContainers.length === 0) {
+                // 如果没有找到特定容器，尝试重置目标内容本身
+                targetContent.scrollTop = 0;
+                debugLog("No specific containers found, reset target content scroll");
+              } else {
+                scrollContainers.forEach(container => {
+                  container.scrollTop = 0;
+                  debugLog("Reset scroll for container: " + container.className);
+                });
+              }
+
+              // 3. 额外保障：使用scrollIntoView
+              targetContent.scrollIntoView({ behavior: 'auto', block: 'start' });
+              debugLog("scrollIntoView executed");
+            }, 100); // 增加延迟到100ms确保内容渲染
+
+            if (this.classList.contains("show-second")) {
+              this.classList.remove("show-second");
+              this.classList.add("active");
+              return;
+            }
+
+            // 关闭其他打开的grid-style
+            gridNavs.forEach((nav) => {
+              if (nav !== this) {
+                nav.classList.remove("active", "show-second");
+              }
+            });
+
+            this.classList.toggle("active");
+          });
+
+          const overlayTop = gridNav.querySelector(".overlay-top");
+          if (overlayTop) {
+            overlayTop.addEventListener("click", function (event) {
+              event.stopPropagation();
+              let parent = this.closest(".nav-box.grid-style");
+              parent.classList.remove("active");
+              parent.classList.add("show-second");
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.icon-check {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../images/check-icon.svg) no-repeat;
+  margin-right: 10px;
+}
+</style>

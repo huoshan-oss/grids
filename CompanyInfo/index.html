@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRID - Business</title>
+    <link rel="stylesheet" href="../mobile.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <script src="../js/mobile.js"></script>
+    <style>
+    /* 添加在原有样式之后 */
+   
+      .bold-line {
+        font-weight: bold;
+      }
+      .salary-info p {
+        margin-bottom: 20px; /* 两个 p 之间的间距（数值可改，如20px/30px） */
+        margin-top: 0; /* 避免顶部间距叠加 */
+        }
+        /* 移除最后一个 p 的底部间距（可选，避免多余空白） */
+    .salary-info p:last-of-type {
+        margin-bottom: 0;
+        }
+      .bold-line {
+        font-weight: bold;
+      }
+
+
+    .content-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 20px auto;
+      transition: all 0.3s ease;
+      max-width: 1000px;
+    }
+    
+    
+    .section-title {
+      color: #2c3e50;
+      border-left: 4px solid #3498db;
+      padding-left: 15px;
+      margin: 25px 0 15px;
+    }
+    
+    .salary-info, .holiday-info, .welfare-info {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    </style>
+    <style>
+    @media (max-width: 768px) {
+      .content-section {
+        padding: 20px;
+        margin: 15px 10px;
+      }
+      
+      .recruit-image img {
+        width: 308px;  
+        height: 160px; 
+        border-radius: 8px; 
+        object-fit: cover;
+      }
+      
+      .section-title {
+        font-size: 1.3rem;
+      }
+      
+      .salary-info, .holiday-info, .welfare-info {
+        padding: 10px;
+      }
+    }
+    </style>
+  </head>
+  <body class="business-page">
+    <div class="container">
+      <!-- mobile-header 头部 -->
+      <div class="mobile-header">
+        <!-- 左侧BUSINESS文字和背景 -->
+        <div class="side-text">
+          <div class="vertical-text">COMPANYINFO</div>
+        </div>
+        <!-- 将logo移到这里 -->
+        <img
+          src="../images/logo.png"
+          alt="GRID Logo"
+          class="logo"
+          onclick="window.location.href='../index.html';"
+        />
+      </div>
+
+      <!-- 添加Business标题 -->
+      <div class="page-title">CompanyInfo</div>
+
+      <!-- 左侧导航区域 -->
+      <div class="left-nav">
+        <!-- 第一个导航 -->
+        <div class="nav-box grid-style">
+          <img
+            src="../images/会社情報1.png"
+            alt="Image 1"
+            class="grid-image default-image"
+          />
+          <img
+            src="../images/会社情報2.png"
+            alt="Image 2"
+            class="grid-image hover-image"
+          />
+          <div class="overlay-images">
+            <img
+              src="../images/会社情報3.png"
+              alt="Image 3"
+              class="grid-image overlay-top"
+            />
+            <img
+              src="../images/会社情報4.png"
+              alt="Image 4"
+              class="grid-image overlay-bottom"
+              onclick="event.stopPropagation();"
+            />
+          </div>
+        </div>
+
+        <!-- 第二个导航 -->
+        <div class="nav-box grid-style">
+          <img
+            src="../images/企業理念1.png"
+            alt="Timeline 1"
+            class="grid-image default-image"
+          />
+          <img
+            src="../images/企業理念2.png"
+            alt="Timeline 2"
+            class="grid-image hover-image"
+          />
+          <div class="overlay-images">
+            <img
+              src="../images/企業理念3.png"
+              alt="Timeline 3"
+              class="grid-image overlay-top"
+            />
+            <img
+              src="../images/企業理念4.png"
+              alt="Timeline 4"
+              class="grid-image overlay-bottom"
+              onclick="event.stopPropagation();"
+            />
+          </div>
+        </div>
+
+        <!-- 第三个导航 -->
+        <div class="nav-box grid-style">
+          <img
+            src="../images/会社概要1.png"
+            alt="Image 1"
+            class="grid-image default-image"
+          />
+          <img
+            src="../images/会社概要2.png"
+            alt="Image 2"
+            class="grid-image hover-image"
+          />
+          <div class="overlay-images">
+            <img
+              src="../images/会社概要3.png"
+              alt="Image 3"
+              class="grid-image overlay-top"
+            />
+            <img
+              src="../images/会社概要4.png"
+              alt="Image 4"
+              class="grid-image overlay-bottom"
+              onclick="event.stopPropagation();"
+            />
+          </div>
+        </div>
+<!-- 这是被注释的段落，不会在浏览器中显示 -->
+        <!-- 第四个导航 -->
+        <div class="nav-box grid-style">
+          <img
+            src="../images/アクセス1.png"
+            alt="Image 1"
+            class="grid-image default-image"
+          />
+          <img
+            src="../images/アクセス2.png"
+            alt="Image 2"
+            class="grid-image hover-image"
+          />
+          <div class="overlay-images">
+            <img
+              src="../images/アクセス3.png"
+              alt="Image 3"
+              class="grid-image overlay-top"
+            />
+            <img
+              src="../images/アクセス4.png"
+              alt="Image 4"
+              class="grid-image overlay-bottom"
+              onclick="event.stopPropagation();"
+            />
+          </div>
+        </div> 
+      </div>
+
+
+    
+     <!-- mobile主内容区域 -->
+     <div class="main-content mobile-content">
+      <div class="content-section mobile-content-step si-content">
+        <div class="recruit-image">
+          <img
+            src="../images/Lounge_front.jpg"
+            alt="System Optimization"
+          />
+        </div>
+
+        <h2 class="section-title">会社概要</h2>
+      <div class="salary-info">
+        <p>◇ グリッド株式会社は、CRM・AI・データ技術を核としたデジタル変革支援企業です。2003年の設立以来、Salesforceを中心とするCRMソリューションを軸に、金融・公共・教育・医療業界など700件以上のプロジェクト実績を積み重ねてきました。
+          近年では、AI・IoT・Databricksを活用した次世代型の統合プラットフォームを開発し、業界特化型のソリューションや人財育成にも注力しています。国内外の多様な企業と協業し、顧客の課題解決と成長に貢献しています。
+          SalesforceおよびDatabricksの認定資格者を多数有し、コンサルから運用保守まで一貫したサービス提供体制を整えています。</p>
+      </div>
+
+      <h2 class="section-title">主要事業の紹介</h2>
+      <div class="salary-info">
+        <p>◇ <span class="bold-line">AI‧CRMサービス</span><br>設⽴以来のコアビジネス領域。Salesforceを中⼼とした
+          CRMサービスの設計‧開発‧運⽤保守まで⼀貫したサポー
+          トを提供。近年はAIを組み合わせた⾼度なCRMソリューシ
+          ョンを展開。</p>
+        <p>◇ <span class="bold-line">⼈財教育事業</span><br>20年以上の実績に基づく知⾒を活かし、DX‧AI‧データ分
+          野の⼈材育成を⽀援。Salesforce認定資格取得⽀援から
+          Databricksエンジニア育成まで、次世代を担う技術者の育成
+          プログラムを提供。</p>
+        <p>◇ <span class="bold-line">AIoTイノベーション</span><br>最先端のAI技術とIoTを組み合わせたイノベーション創出。
+          ウェアラブルデバイス、センサー技術、クラウド基盤との
+          連携により、業務効率化と新たな価値創造を実現するソリ
+          ューションを開発。</p>
+        <p>◇ <span class="bold-line">DXソリューション研究開発</span><br>デジタルトランスフォーメーションを加速するための研究開
+          発活動。Databricksを活⽤したデータレイクハウスソリュー
+          ション、企業のDX推進を⽀援する先進的なプラットフォー
+          ム構築を推進。</p>  
+      </div>
+
+      <h2 class="section-title">お問い合わせリンク</h2>
+      <div class="welfare-info">
+        <p>◇ 企業WEBサイト： http://www.grids.co.jp</p>
+        <p>◇ 所在地：東京都中央区八丁堀3丁目-JP-BASE京橋  2階</p>
+        <p>◇ 電話：(03)3537-9700</p>
+        <p>◇ Email：sale1@grids.co.jp&nbsp;&nbsp;&nbsp;recruit@grids.co.jp(採用専用)</p>
+      </div>
+      </div>
+
+      <div
+        class="content-section mobile-content-step dx-content"
+        style="display: none"
+      >
+        <div class="recruit-image">
+          <img src="images/optimize2.jpg" alt="Process Optimization" />
+        </div>
+
+        <h2 class="section-title">企業理念</h2>
+        <div class="salary-info">
+          <p>◇ 私たちは「技術と人で社会を変革する」ことを理念に掲げ、最先端テクノロジーと実践知を融合し、持続可能な社会の実現を目指します。
+            AIやデータ、IoTを活用してお客様の業務を革新し、企業の真の価値創造に貢献します。
+            また、人財こそ最も重要な資産と捉え、次世代を担うエンジニアやデータ人財の育成にも注力。
+            クライアント、社会、社員に対して「誠実」であることを大切にし、共に未来を切り拓いていきます。</p>
+        </div>
+
+        <!-- <h2 class="section-title">組織最適化</h2> 
+        <div class="holiday-info">
+          <p>◇ 組織構造の見直し</p>
+          <p>◇ 人材配置の最適化</p>
+          <p>◇ コミュニケーション改善</p>
+          <p>◇ 意思決定プロセスの効率化</p>
+          <p>◇ チーム編成の最適化</p>
+          <p>◇ 権限委譲の促進</p>
+        </div>
+
+        <h2 class="section-title">生産性向上</h2>
+        <div class="welfare-info">
+          <p>◇ 作業環境の改善</p>
+          <p>◇ ツール導入による効率化</p>
+          <p>◇ スキル向上支援</p>
+          <p>◇ モチベーション向上</p>
+          <p>◇ ワークライフバランス</p>
+          <p>◇ 目標管理の徹底</p>
+          <p>◇ フィードバックの強化</p>
+          <p>◇ 成果評価の最適化</p>
+          <p>◇ 継続的な改善活動</p>
+        </div>-->
+      </div>
+
+      <div
+        class="content-section mobile-content-step infra-content"
+        style="display: none"
+      >
+        <div class="recruit-image">
+          <img src="images/education3.jpg" alt="New Graduate Education" />
+        </div>
+
+        <h2 class="section-title">新入社員研修</h2>
+        <div class="salary-info">
+          <p>◇ ビジネスマナー基礎</p>
+          <p>◇ IT基礎知識研修</p>
+          <p>◇ プログラミング入門</p>
+          <p>◇ チームワーク演習</p>
+          <p>◇ ビジネス文書作成</p>
+        </div>
+
+        <h2 class="section-title">技術研修</h2>
+        <div class="holiday-info">
+          <p>◇ 開発環境構築</p>
+          <p>◇ システム設計基礎</p>
+          <p>◇ データベース基礎</p>
+          <p>◇ セキュリティ基礎</p>
+          <p>◇ アジャイル開発入門</p>
+          <p>◇ 品質管理基礎</p>
+        </div>
+
+        <h2 class="section-title">成長支援</h2>
+        <div class="welfare-info">
+          <p>◇ メンター制度</p>
+          <p>◇ 定期面談制度</p>
+          <p>◇ スキルアップ支援</p>
+          <p>◇ 資格取得支援</p>
+          <p>◇ 社内勉強会</p>
+          <p>◇ 若手社員交流会</p>
+          <p>◇ キャリア相談</p>
+          <p>◇ 技術書籍提供</p>
+          <p>◇ オンライン学習環境</p>
+        </div>
+      </div>
+
+      <div class="content-section mobile-content-step si-content"  style="display: none">
+        <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1620.5435758930457!2d139.774355!3d35.674856!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018895f39b0e4a9%3A0xc4480cc4b71e09d9!2z44CSMTA0LTAwMzIg5p2x5Lqs6YO95Lit5aSu5Yy65YWr5LiB5aCA77yT5LiB55uu77yR77yQ4oiS77yTIEpwLUJhc2XkuqzmqYsgMumajg!5e0!3m2!1sja!2sjp!4v1751875134063!5m2!1sja!2sjp" 
+        width="100%" 
+        height="320" 
+        style="border:0;" 
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+        
+
+        <h2 class="section-title">所在地</h2>
+        <div class="salary-info">
+          <p>◇ 東京都中央区八丁堀3丁目-JP-BASE京橋&nbsp&nbsp2階</p>
+        </div>
+
+        <h2 class="section-title">交通</h2>
+        <div class="holiday-info">
+          <p>◇ 銀座線 「京橋」駅 徒歩 6分</p>
+          <p>◇ 日比谷線 「八丁堀」駅 徒歩 3分</p>
+          <p>◇ 都営浅草線 「宝町」駅 徒歩 3分</p>
+          <p>◇ JR京葉線 「八丁堀」駅 徒歩 3分</p>
+        </div>
+      </div>
+
+      <!-- <div 
+        class="content-section mobile-content-step security-content"
+        style="display: none"
+      >
+        <div class="recruit-image">
+          <img
+            src="images/main_parts_0000926171_13.jpg"
+            alt="System Optimization"
+          />
+        </div>
+
+        <h2 class="section-title">システム最適化</h2>
+       
+        <div class="salary-info">
+          <div class="info-item">
+            <i class="icon-check"></i>
+            <p>◇ システムパフォーマンス分析</p>
+          </div>
+          <div class="info-item">
+            <i class="icon-check"></i>
+            <p>◇ インフラストラクチャー最適化</p>
+          </div>
+          <p>◇ データベース最適化</p>
+          <p>◇ アプリケーション高速化</p>
+          <p>◇ クラウドリソース最適化</p>
+        </div>
+
+        <h2 class="section-title">コスト最適化</h2>
+        <div class="holiday-info">
+          <p>◇ クラウドコスト分析</p>
+          <p>◇ リソース使用効率化</p>
+          <p>◇ ライセンス最適化</p>
+          <p>◇ 運用コスト削減</p>
+          <p>◇ 投資対効果の最大化</p>
+          <p>◇ 予算管理の効率化</p>
+        </div>
+
+        <h2 class="section-title">運用効率化</h2>
+        <div class="welfare-info">
+          <p>◇ 自動化プロセスの導入</p>
+          <p>◇ モニタリング体制の強化</p>
+          <p>◇ インシデント対応の迅速化</p>
+          <p>◇ セキュリティ対策の強化</p>
+          <p>◇ バックアップ体制の最適化</p>
+          <p>◇ ワークフローの効率化</p>
+          <p>◇ ナレッジ管理の改善</p>
+          <p>◇ チーム連携の強化</p>
+          <p>◇ 品質管理プロセスの向上</p>
+        </div>
+      </div>-->
+    </div>
+  </div>
+
+  <!-- PC端内容容器 -->
+  <div class="business-content pc-content">
+    <div class="content-section content-section-step si-content">
+      <div class="recruit-image" style="text-align: center;background:#fff url(../images/Lounge_front.jpg) no-repeat center center; background-size: cover; height: 200px;margin: 0 auto; border-radius: 10px;position: relative;">
+        <!-- <img src="images/ai.jpg" alt="AI Engineer"> -->
+          </div>
+
+      <h2 class="section-title">会社概要</h2>
+      <div class="salary-info">
+        <p>◇ グリッド株式会社は、CRM・AI・データ技術を核としたデジタル変革支援企業です。2003年の設立以来、Salesforceを中心とするCRMソリューションを軸に、金融・公共・教育・医療業界など700件以上のプロジェクト実績を積み重ねてきました。
+          近年では、AI・IoT・Databricksを活用した次世代型の統合プラットフォームを開発し、業界特化型のソリューションや人財育成にも注力しています。国内外の多様な企業と協業し、顧客の課題解決と成長に貢献しています。
+          SalesforceおよびDatabricksの認定資格者を多数有し、コンサルから運用保守まで一貫したサービス提供体制を整えています。</p>
+      </div>
+
+      <h2 class="section-title">主要事業の紹介</h2>
+      <div class="holiday-info">
+        <p>◇ <span class="bold-line">AI‧CRMサービス</span><br>設⽴以来のコアビジネス領域。Salesforceを中⼼とした
+          CRMサービスの設計‧開発‧運⽤保守まで⼀貫したサポー
+          トを提供。近年はAIを組み合わせた⾼度なCRMソリューシ
+          ョンを展開。</p>
+        <p>◇ <span class="bold-line">⼈財教育事業</span><br>20年以上の実績に基づく知⾒を活かし、DX‧AI‧データ分
+          野の⼈材育成を⽀援。Salesforce認定資格取得⽀援から
+          Databricksエンジニア育成まで、次世代を担う技術者の育成
+          プログラムを提供。</p>
+        <p>◇ <span class="bold-line">AIoTイノベーション</span><br>最先端のAI技術とIoTを組み合わせたイノベーション創出。
+          ウェアラブルデバイス、センサー技術、クラウド基盤との
+          連携により、業務効率化と新たな価値創造を実現するソリ
+          ューションを開発。</p>
+        <p>◇ <span class="bold-line">DXソリューション研究開発</span><br>デジタルトランスフォーメーションを加速するための研究開
+          発活動。Databricksを活⽤したデータレイクハウスソリュー
+          ション、企業のDX推進を⽀援する先進的なプラットフォー
+          ム構築を推進。</p>  
+      </div>
+
+      <h2 class="section-title">お問い合わせリンク</h2>
+      <div class="welfare-info">
+        <p>◇ 企業WEBサイト： http://www.grids.co.jp</p>
+        <p>◇ 所在地：東京都中央区八丁堀3丁目-JP-BASE京橋  2階</p>
+        <p>◇ 電話：(03)3537-9700</p>
+        <p>◇ Email：sale1@grids.co.jp&nbsp;&nbsp;&nbsp;recruit@grids.co.jp(採用専用)</p>
+      </div>
+    </div>
+
+    
+    <div
+      class="content-section content-section-step si-content"
+      style="display: none"
+    >
+    <div class="recruit-image" style="text-align: center;background:#fff url(../images/main_parts_0000925053_10.jpg) no-repeat center center; background-size: cover; height: 200px;margin: 0 auto; border-radius: 10px;position: relative;">
+      <!-- <img src="images/ai.jpg" alt="AI Engineer"> -->
+        </div>
+
+      <h2 class="section-title">企業理念</h2>
+      <div class="salary-info">
+        <p>◇ 私たちは「技術と人で社会を変革する」ことを理念に掲げ、最先端テクノロジーと実践知を融合し、持続可能な社会の実現を目指します。
+          AIやデータ、IoTを活用してお客様の業務を革新し、企業の真の価値創造に貢献します。
+          また、人財こそ最も重要な資産と捉え、次世代を担うエンジニアやデータ人財の育成にも注力。
+          クライアント、社会、社員に対して「誠実」であることを大切にし、共に未来を切り拓いていきます。</p>
+      </div>
+
+      <!-- <h2 class="section-title">組織最適化</h2> 
+      <div class="holiday-info">
+        <p>◇ 組織構造の見直し</p>
+        <p>◇ 人材配置の最適化</p>
+        <p>◇ コミュニケーション改善</p>
+        <p>◇ 意思決定プロセスの効率化</p>
+        <p>◇ チーム編成の最適化</p>
+        <p>◇ 権限委譲の促進</p>
+      </div>
+
+      <h2 class="section-title">生産性向上</h2>
+      <div class="welfare-info">
+        <p>◇ 作業環境の改善</p>
+        <p>◇ ツール導入による効率化</p>
+        <p>◇ スキル向上支援</p>
+        <p>◇ モチベーション向上</p>
+        <p>◇ ワークライフバランス</p>
+        <p>◇ 目標管理の徹底</p>
+        <p>◇ フィードバックの強化</p>
+        <p>◇ 成果評価の最適化</p>
+        <p>◇ 継続的な改善活動</p>
+      </div>-->
+    </div>
+
+    <div
+      class="content-section content-section-step infra-content"
+      style="display: none"
+    >
+    <div class="recruit-image" style="text-align: center;background:#fff url(../images/12_MTG.jpg) no-repeat center center; background-size: cover; height: 200px;margin: 0 auto; border-radius: 10px;position: relative;">
+      <!-- <img src="images/ai.jpg" alt="AI Engineer"> -->
+        </div>
+
+      <h2 class="section-title">設立年月日</h2>
+      <div class="salary-info">
+        <p>◇ 2003年10月08日</p>
+      </div>
+
+      <h2 class="section-title">資本金</h2>
+      <div class="holiday-info">
+        <p>◇ 2250万</p>
+      </div>
+
+      <h2 class="section-title">役員紹介</h2>
+      <div class="welfare-info">
+        <p>◇ メンター制度</p>
+        <p>◇ 定期面談制度</p>
+        <p>◇ スキルアップ支援</p>
+        <p>◇ 資格取得支援</p>
+        <p>◇ 社内勉強会</p>
+        <p>◇ 若手社員交流会</p>
+        <p>◇ キャリア相談</p>
+        <p>◇ 技術書籍提供</p>
+        <p>◇ オンライン学習環境</p>
+      </div>
+    </div>
+
+    <div class="content-section content-section-step si-content" style="display: none">
+      
+      <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1620.5435758930457!2d139.774355!3d35.674856!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018895f39b0e4a9%3A0xc4480cc4b71e09d9!2z44CSMTA0LTAwMzIg5p2x5Lqs6YO95Lit5aSu5Yy65YWr5LiB5aCA77yT5LiB55uu77yR77yQ4oiS77yTIEpwLUJhc2XkuqzmqYsgMumajg!5e0!3m2!1sja!2sjp!4v1751875134063!5m2!1sja!2sjp" 
+      width="100%" 
+      height="400" 
+      style="border:0;" 
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+   
+    
+     <h2 class="section-title">所在地</h2> 
+    <div class="salary-info">
+      <p>◇ 東京都中央区八丁堀3丁目-JP-BASE京橋&nbsp&nbsp2階</p>
+    </div>
+
+    <h2 class="section-title">交通</h2>
+    <div class="holiday-info">
+      <p>◇ 銀座線 「京橋」駅 徒歩 6分</p>
+      <p>◇ 日比谷線 「八丁堀」駅 徒歩 3分</p>
+      <p>◇ 都営浅草線 「宝町」駅 徒歩 3分</p>
+      <p>◇ JR京葉線 「八丁堀」駅 徒歩 3分</p>
+    </div>
+  </div>
+
+    <!-- <div 
+      class="content-section content-section-step security-content"
+      style="display: none"
+    >
+      <div class="recruit-image">
+        <img src="images/education4.jpg" alt="Leadership Education" />
+      </div>
+
+      <h2 class="section-title">リーダーシップ開発</h2>
+      <div class="salary-info">
+        <p>◇ リーダーシップ理論と実践</p>
+        <p>◇ チームマネジメント</p>
+        <p>◇ 戦略的意思決定</p>
+        <p>◇ コンフリクト解決</p>
+        <p>◇ モチベーション管理</p>
+      </div>
+
+      <h2 class="section-title">専門スキル</h2>
+      <div class="holiday-info">
+        <p>◇ プロジェクト統括管理</p>
+        <p>◇ リスクマネジメント</p>
+        <p>◇ 品質管理手法</p>
+        <p>◇ コスト管理</p>
+        <p>◇ スケジュール管理</p>
+        <p>◇ ステークホルダー管理</p>
+      </div>
+
+      <h2 class="section-title">高度育成プログラム</h2>
+      <div class="welfare-info">
+        <p>◇ アドバンスドPM研修</p>
+        <p>◇ グローバル人材育成</p>
+        <p>◇ イノベーション創出</p>
+        <p>◇ デジタル変革推進</p>
+        <p>◇ 組織開発手法</p>
+        <p>◇ 次世代リーダー育成</p>
+        <p>◇ 経営戦略立案</p>
+        <p>◇ 高度技術マネジメント</p>
+        <p>◇ エグゼクティブ育成</p>
+      </div>
+    </div>-->
+  </div>
+
+    <script>
+      function setScale() {
+        const container = document.querySelector(".container");
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        const baseScaleX = windowWidth / 1920;
+        const baseScaleY = windowHeight / 1080;
+        let scale = Math.min(baseScaleX, baseScaleY);
+
+        // 调整logo位置
+        const logo = document.querySelector(".logo");
+        if (windowHeight <= 800) {
+          logo.style.top = "120px"; // 小屏幕上的位置
+        } else {
+          logo.style.top = "100px"; // 正常屏幕上的位置
+        }
+
+        // 大屏幕不缩放
+        if (windowWidth >= 1920 && windowHeight >= 1080) {
+          scale = 1;
+        } else {
+          // 限制最小缩放比例为0.65
+          scale = Math.max(scale, 0.65);
+        }
+
+        document.documentElement.style.setProperty("--scale-ratio", scale);
+      }
+
+      function debounce(func, wait) {
+        let timeout;
+        return function () {
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(this, arguments), wait);
+        };
+      }
+
+      window.addEventListener("resize", debounce(setScale, 100));
+      window.addEventListener("load", setScale);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 获取所有grid-style导航和内容区域
+        const gridNavs = document.querySelectorAll(".nav-box.grid-style");
+        const contentSections = document.querySelectorAll(".content-section-step");
+        const mobileContentSections = document.querySelectorAll(".mobile-content-step");
+        // 默认显示第一个内容
+        contentSections[0].style.display = "block";
+
+        // 添加调试日志函数
+        function debugLog(message) {
+          console.log("[ScrollDebug]", message);
+        }
+
+        gridNavs.forEach((gridNav, index) => {
+          gridNav.addEventListener("click", function (event) {
+            event.stopPropagation();
+            let targetContent;
+
+            if (isMobile()) {
+              // 切换内容显示
+              mobileContentSections.forEach((section, sectionIndex) => {
+                const isActive = sectionIndex === index;
+                section.style.display = isActive ? "block" : "none";
+                if (isActive) {
+                  targetContent = section;
+                  debugLog("Mobile content activated: " + sectionIndex);
+                }
+              });
+            } else {
+              // 切换内容显示
+              contentSections.forEach((section, sectionIndex) => {
+                const isActive = sectionIndex === index;
+                section.style.display = isActive ? "block" : "none";
+                if (isActive) {
+                  targetContent = section;
+                  debugLog("Desktop content activated: " + sectionIndex);
+                }
+              });
+            }
+
+            // 关键修复：增加延迟确保内容完全渲染
+            setTimeout(() => {
+              if (!targetContent) {
+                debugLog("Target content not found");
+                return;
+              }
+
+              // 1. 强制重置页面滚动
+              window.scrollTo(0, 0); // 使用非平滑滚动确保兼容性
+              debugLog("Page scroll reset");
+
+              // 2. 查找并重置所有可能的滚动容器
+              const scrollContainers = targetContent.querySelectorAll(".salary-info, .holiday-info, .welfare-info, div[style*='overflow-y'], div[style*='overflow-x']");
+              
+              if (scrollContainers.length === 0) {
+                // 如果没有找到特定容器，尝试重置目标内容本身
+                targetContent.scrollTop = 0;
+                debugLog("No specific containers found, reset target content scroll");
+              } else {
+                scrollContainers.forEach(container => {
+                  container.scrollTop = 0;
+                  debugLog("Reset scroll for container: " + container.className);
+                });
+              }
+
+              // 3. 额外保障：使用scrollIntoView
+              targetContent.scrollIntoView({ behavior: 'auto', block: 'start' });
+              debugLog("scrollIntoView executed");
+            }, 100); // 增加延迟到100ms确保内容渲染
+
+            if (this.classList.contains("show-second")) {
+              this.classList.remove("show-second");
+              this.classList.add("active");
+              return;
+            }
+
+            // 关闭其他打开的grid-style
+            gridNavs.forEach((nav) => {
+              if (nav !== this) {
+                nav.classList.remove("active", "show-second");
+              }
+            });
+
+            this.classList.toggle("active");
+          });
+
+          const overlayTop = gridNav.querySelector(".overlay-top");
+          if (overlayTop) {
+            overlayTop.addEventListener("click", function (event) {
+              event.stopPropagation();
+              let parent = this.closest(".nav-box.grid-style");
+              parent.classList.remove("active");
+              parent.classList.add("show-second");
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.icon-check {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../images/check-icon.svg) no-repeat;
+  margin-right: 10px;
+}
+</style>

@@ -1,0 +1,422 @@
+
+
+/* 时间线区域 */
+.container1 {
+    width: 1920px; 
+    height: 1080px;
+    position: relative;
+    background: #fff;
+    transform: scale(var(--scale-ratio, 1));
+    transform-origin: left center;
+}
+.timeline {
+    position: absolute;
+    left: 58%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: max(60vh, 500px);
+    overflow-y: scroll;
+    padding: 40px;
+    width: 800px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* 隐藏Webkit浏览器的滚动条 */
+.timeline::-webkit-scrollbar {
+    display: none;
+}
+
+/* 移除之前的滚动条样式 */
+.timeline::-webkit-scrollbar-track,
+.timeline::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+/* 时间线垂直线 */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: -60px;
+    height: calc(100% + 600px);
+    width: 3px;
+    background: #373434;
+    transform: translateX(-50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 内容框 */
+.content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    border: 1px solid #373434;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fff;
+    z-index: 1;
+}
+
+/* 媒体查询 */
+@media screen and (min-width: 1920px) {
+    body {
+        justify-content: center;
+    }
+    
+    .container {
+        transform: none;
+    }
+
+    .side-text {
+        left: calc(50% - 960px);
+    }
+
+    .logo {
+        left: calc(50% - 960px + 140px);
+    }
+
+    .left-nav {
+        left: calc(50% - 960px + 280px);
+    }
+}
+
+/* 小屏幕适配 - 调整内容间距 */
+@media screen and (max-width: 1400px) {
+    .content.left {
+        right: calc(50% + 35px);
+    }
+    
+    .content.right {
+        left: calc(50% + 35px);
+    }
+    
+    .content.right + .dot + .year {
+        right: calc(50% + 35px);
+    }
+    
+    .content.left + .dot + .year {
+        left: calc(50% + 35px);
+    }
+
+    .page-title {
+        font-size: 42px;
+    }
+
+    .timeline {
+        left: 63%;
+        height: max(55vh, 450px);
+        width: 700px;
+        padding: 40px;
+    }
+
+    .timeline-line {
+        height: calc(100% + 500px);
+    }
+}
+
+/* 小屏幕高度适配 */
+@media screen and (max-height: 800px) {
+    .timeline {
+        height: max(50vh, 450px);
+        top: 50%;
+    }
+    
+    .timeline-line {
+        position: absolute;
+        left: 50%;
+        top: -60px;
+        height: calc(100% + 600px);
+        transform: translateX(-50%);
+    }
+
+    .logo {
+        top: 120px;
+    }
+
+    .page-title {
+        top: 170px;
+    }
+
+    .left-nav {
+        top: 50%;
+    }
+}
+
+/* 更小屏幕的适配 */
+@media screen and (max-width: 1200px) {
+    .timeline {
+        left: 60%;
+        height: max(50vh, 400px);
+        width: 600px;
+        padding: 30px;
+    }
+    
+    .timeline-line {
+        left: 50%;  /* 保持与圆点的对齐 */
+        height: calc(100% + 400px);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .timeline {
+        height: max(45vh, 350px);
+        width: 500px;
+        padding: 20px;
+    }
+
+    .timeline-line {
+        height: calc(100% + 300px);
+    }
+}
+
+
+
+/* 年份项目 */
+.year-item {
+    position: relative;
+    flex: 0 0 120px;
+    /* min-height: 120px; */
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+    width: 100%;
+}
+/* 年份文字 */
+.year {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 32px;
+}
+
+/* 当内容在右边时，年份在左边 */
+.content.right + .dot + .year {
+    right: calc(50% + 45px);
+}
+
+/* 当内容在左边时，年份在右边 */
+.content.left + .dot + .year {
+    left: calc(50% + 45px);
+}
+
+/* 时间点 */
+.dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 13px;
+    height: 13px;
+    background: #373434;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* 添加圆点外圈 */
+.dot::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 19px;
+    height: 19px;
+    border: 1px solid #373434;
+    border-radius: 50%;
+}
+
+.content.left {
+    right: calc(50% + 45px);
+    text-align: right;
+}
+
+.content.right {
+    left: calc(50% + 45px);
+    text-align: left;
+}
+
+.content .title,
+.content .text {
+    text-align: inherit;
+}
+
+.content .title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.content .text {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* 底部键 */
+.bottom-key {
+    display: none;
+}
+
+/* 右侧内容框的小三角 */
+.content.right::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 10px solid #373434;
+}
+
+.content.right::after {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 10px solid #fff;
+}
+
+/* 左侧内容框的小三角 */
+.content.left::before {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 10px solid #373434;
+}
+
+.content.left::after {
+    content: '';
+    position: absolute;
+    right: -9px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 10px solid #fff;
+}
+
+/* 在更小的屏幕上增加顶部距离 */
+@media screen and (max-height: 800px) {
+    .logo {
+        top: 120px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* History页面特定样式 */
+    .timeline {
+        position: relative;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .timeline-line {
+        left: 20px;
+        height: 100%;
+    }
+
+    .year-item {
+        flex-direction: column;
+        margin-left: 40px;
+    }
+
+    .content {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .year {
+        position: relative;
+        left: -30px;
+        margin-bottom: 10px;
+    }
+
+    .dot {
+        left: 20px;
+    }
+}
+
+/* 内容区域基础样式 */
+.history-section {
+    width: 100%;
+}
+
+/* 确保所有内容区域使用相同的布局 */
+.first-content,
+.second-content,
+.third-content,
+.fourth-content {
+    padding: 20px;
+}
+
+/* PC端样式 */
+@media screen and (min-width: 769px) {
+    .side-text {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 140px;
+        background: #373434;
+        z-index: 1;
+    }
+
+    .logo {
+        position: fixed;
+        left: 140px;
+        top: 100px;
+        width: 120px;
+        height: 120px;
+        transform: translateX(-50%);
+        cursor: pointer;
+        z-index: 2;
+        transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+        transform: translateX(-50%) scale(1.1);
+    }
+
+    .left-nav {
+        position: fixed;
+        left: 280px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /* 其他PC端样式 */
+    .page-title {
+        position: absolute;
+        left: 280px;
+        top: 150px;
+    }
+
+    .business-content {
+        position: fixed;
+        left: 500px;
+        top: 53%;
+        transform: translateY(-47%);
+    }
+}
+

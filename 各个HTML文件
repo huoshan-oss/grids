@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRID - XXX</title>
+    <link rel="stylesheet" href="xxx.css">
+    <link rel="stylesheet" href="mobile.css">
+    <script src="mobile.js"></script>
+</head> 
+
+<!-- 导航区域 -->
+<div class="left-nav">
+    <!-- 第一个导航 -->
+    <div class="nav-box grid-style" data-nav="recruit">
+        <img src="images/Recruit1.png" alt="Recruit" class="grid-image default-image">
+        <!-- ... 其他图片 ... -->
+    </div>
+
+    <!-- 第二个导航 -->
+    <div class="nav-box grid-style" data-nav="business">
+        <img src="images/Business1.png" alt="Business" class="grid-image default-image">
+        <!-- ... 其他图片 ... -->
+    </div>
+
+    <!-- 第三个导航 -->
+    <div class="nav-box grid-style" data-nav="partner">
+        <img src="images/partner1.png" alt="Partner" class="grid-image default-image">
+        <!-- ... 其他图片 ... -->
+    </div>
+
+    <!-- 其他导航... -->
+</div> 

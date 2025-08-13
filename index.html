@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRID</title>
+    <!-- 添加关键样式 -->
+    <style>
+        /* 预防闪烁的关键样式 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .container {
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        
+        .container.loaded {
+            opacity: 1;
+        }
+        
+        /* 预加载状态 */
+        .preload {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 9999;
+        }
+        
+        /* 添加视频样式 */
+        video.grid-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* 添加遮罩和按钮样式 */
+        .grid-item-hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);  /* 这里的0.7表示70%不透明度，即30%透明度 */
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+        
+        .grid-item:hover .grid-item-hover-overlay {
+            display: flex;
+        }
+        
+        .hover-button {
+            margin: 10px;
+            padding: 10px 20px;
+            background: #fff;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 150px; /* 固定宽度 */
+            text-align: center; /* 文字居中 */
+            box-sizing: border-box; /* 包含padding和border */
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile.css">
+    <!-- 添加资源预加载 -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="mobile.css" as="style">
+    <link rel="preload" href="images/background1.png" as="image">
+    <link rel="preload" href="images/background2.png" as="image">
+    <!-- 其他关键资源的预加载... -->
+</head>
+<body class="index-page">
+    <div class="container home-container">
+        <!-- 添加背景图片容器 -->
+        <!-- <div class="background-image1index">
+            <img src="images/background1.png" alt="Background 1" style=" position: absolute; top: 50px; left: 50px; z-index: -1;">
+        </div>
+        <div class="background-image2index">
+            <img src="images/background2.png" alt="Background 2" style=" position: absolute; bottom: 50px; right: 50px; z-index: -2;">
+        </div> -->
+
+        <header class="header">
+            <h1>GRID</h1>
+            <div class="subtitle" style="padding:10px 0px 60px 0px;">Co.,Ltd</div>
+        </header>
+        
+        <div class="grid-container">
+            <!-- 第一行 -->
+            <div class="grid-item" data-link="history/index.html">
+                <!-- <video autoplay muted loop playsinline class="grid-image"> -->
+                    <!-- <source src="images/video.mp4" type="video/mp4"> -->
+                    <img src="images/GRSTORT.jpg" class="grid-image">
+                </video>
+                <div class="grid-item-hover-overlay">
+                    <button class="hover-button" onclick="window.location.href='./history/index.html'">詳細を見る</button>
+                    <button class="hover-button" onclick="alert('联系我们')">拡大再生</button>
+                </div>
+            </div>
+            <div class="grid-item" data-link="business/index.html">
+                <!-- <video autoplay muted loop playsinline class="grid-image"> -->
+                    <!-- <source src="images/video.mp4" type="video/mp4"> -->
+                    <img src="images/Business.jpg" class="grid-image">
+                </video>
+                <div class="grid-item-hover-overlay">
+                    <button class="hover-button" onclick="window.location.href='./business/index.html'">詳細を見る</button>
+                    <button class="hover-button" onclick="alert('联系我们')">拡大再生</button>
+                </div>
+            </div>
+            <div class="grid-item" data-link="team/indexcopy.html">
+                <!-- <video autoplay muted loop playsinline class="grid-image"> -->
+                    <!-- <source src="images/video.mp4" type="video/mp4"> -->
+                    <img src="images/Grid. team.jpg" class="grid-image">
+                </video>
+                <div class="grid-item-hover-overlay">
+                    <button class="hover-button" onclick="window.location.href='./team/indexcopy.html'">詳細を見る</button>
+                    <button class="hover-button" onclick="alert('联系我们')">拡大再生</button>
+                </div>
+            </div>
+            <div class="grid-item" data-link="recruit/index1.html">
+                <!-- <video autoplay muted loop playsinline class="grid-image"> -->
+                    <!-- <source src="images/video.mp4" type="video/mp4"> -->
+                    <img src="images/Recruit.jpg" class="grid-image">
+                </video>
+                <div class="grid-item-hover-overlay">
+                    <button class="hover-button" onclick="window.location.href='./recruit/index1.html'">詳細を見る</button>
+                    <button class="hover-button" onclick="alert('联系我们')">拡大再生</button>
+                </div>
+            </div>
+            
+            <!-- 第二行 -->
+            <div class="grid-item" data-link="5/index.html">
+                <!-- <video autoplay muted loop playsinline class="grid-image"> -->
+                    <!-- <source src="images/video.mp4" type="video/mp4"> -->
+                    <img src="images/95or5.jpg" class="grid-image">
+                </video>
+                <div class="grid-item-hover-overlay">
+                    <button class="hover-button" onclick="window.location.href='./5/index.html'">詳細を見る</button>
+                    <button class="hover-button" onclick="alert('联系我们')">拡大再生</button>
+                </div>
+            </div>
+            <div class="grid-item" data-link="Topics/index.html">
+                <!-- <video autoplay muted loop playsinline class="grid-image"> -->
+                    <!-- <source src="images/video.mp4" type="video/mp4"> -->
+                    <img src="images/topics.jpg" class="grid-image">
+                </video>
+                <div class="grid-item-hover-overlay">
+                    <button class="hover-button" onclick="window.location.href='./Topics/index.html'">詳細を見る</button>
+                    <button class="hover-button" onclick="alert('联系我们')">拡大再生</button>
+                </div>
+            </div>
+            <div class="grid-item" data-link="ai/index.html">
+                <!-- <video autoplay muted loop playsinline class="grid-image"> -->
+                    <!-- <source src="images/video.mp4" type="video/mp4"> -->
+                    <img src="images/AI.jpg" class="grid-image">
+                </video>
+                <div class="grid-item-hover-overlay">
+                    <button class="hover-button" onclick="window.location.href='./ai/index.html'">詳細を見る</button>
+                    <button class="hover-button" onclick="alert('联系我们')">拡大再生</button>
+                </div>
+            </div>
+            <div class="grid-item" data-link="advantage/index.html">
+                <!-- <video autoplay muted loop playsinline class="grid-image"> -->
+                    <!-- <source src="images/video.mp4" type="video/mp4"> -->
+                    <img src="images/advantage.jpg" class="grid-image">
+                </video>
+                <div class="grid-item-hover-overlay">
+                    <button class="hover-button" onclick="window.location.href='./advantage/index.html'">詳細を見る</button>
+                    <button class="hover-button" onclick="alert('联系我们')">拡大再生</button>
+                </div>
+            </div>
+            
+            <!-- 第三行 -->
+            <div class="grid-item" data-link="Achievements/index.html">
+                <!-- <video autoplay muted loop playsinline class="grid-image"> -->
+                    <!-- <source src="images/video.mp4" type="video/mp4"> -->
+                    <img src="images/Achievements.jpg" class="grid-image">
+                </video>
+                <div class="grid-item-hover-overlay">
+                    <button class="hover-button" onclick="window.location.href='./Achievements/index.html'">詳細を見る</button>
+                    <button class="hover-button" onclick="alert('联系我们')">拡大再生</button>
+                </div>
+            </div>
+            <div class="grid-item" data-link="CompanyInfo/index.html">
+                <!-- <video autoplay muted loop playsinline class="grid-image"> -->
+                    <!-- <source src="images/video.mp4" type="video/mp4"> -->
+                    <img src="images/CompanyInfo.jpg" class="grid-image">
+                </video>
+                <div class="grid-item-hover-overlay">
+                    <button class="hover-button" onclick="window.location.href='./CompanyInfo/index.html'">詳細を見る</button>
+                    <button class="hover-button" onclick="alert('联系我们')">拡大再生</button>
+                </div>
+            </div>
+            <div class="grid-item" data-link="alot/index.html">
+                <!-- <video autoplay muted loop playsinline class="grid-image"> -->
+                    <!-- <source src="images/video.mp4" type="video/mp4"> -->
+                    <img src="images/Aiot.jpg" class="grid-image">
+                </video>
+                <div class="grid-item-hover-overlay">
+                    <button class="hover-button" onclick="window.location.href='./alot/index.html'">詳細を見る</button>
+                    <button class="hover-button" onclick="alert('联系我们')">拡大再生</button>
+                </div>
+            </div>
+            <div class="grid-item" data-link="Skill/index.html">
+                <!-- <video autoplay muted loop playsinline class="grid-image"> -->
+                    <!-- <source src="images/video.mp4" type="video/mp4"> -->
+                    <img src="images/Skill.jpg" class="grid-image">
+                </video>
+                <div class="grid-item-hover-overlay">
+                    <button class="hover-button" onclick="window.location.href='./Skill/index.html'">詳細を見る</button>
+                    <button class="hover-button" onclick="alert('联系我们')">拡大再生</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    // 在 DOMContentLoaded 之前预先定义变量
+    let scaleTimeout;
+    const container = document.querySelector('.container');
+    
+    // 优化缩放函数
+    function setScale() {
+        if (scaleTimeout) {
+            clearTimeout(scaleTimeout);
+        }
+        
+        scaleTimeout = setTimeout(() => {
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            
+            // 移动端不执行缩放
+            if (windowWidth <= 768) {
+                container.style.setProperty('--scale-ratio', 1);
+                return;
+            }
+            
+            const baseScaleX = windowWidth / 1920;
+            const baseScaleY = windowHeight / 1080;
+            let scale = Math.min(baseScaleX, baseScaleY);
+            
+            if (windowWidth >= 1920) {
+                scale = 1;
+            } else {
+                scale = Math.max(scale, 0.6);
+            }
+            
+            container.style.setProperty('--scale-ratio', scale);
+        }, 10);
+    }
+
+    // 页面加载优化
+    document.addEventListener('DOMContentLoaded', function() {
+        // 添加预加载层
+        const preload = document.createElement('div');
+        preload.className = 'preload';
+        document.body.appendChild(preload);
+        
+        // 确保所有资源加载完成后再显示内容
+        window.addEventListener('load', function() {
+            // 移除预加载层
+            preload.style.opacity = '0';
+            setTimeout(() => {
+                preload.remove();
+                // 显示内容
+                container.classList.add('loaded');
+            }, 100);
+            
+            // 设置初始缩放
+            setScale();
+        });
+        
+        const gridItems = document.querySelectorAll('.grid-item');
+        
+        gridItems.forEach(item => {
+            item.addEventListener('click', function(event) {
+                const link = this.getAttribute('data-link');
+                if (link) {
+                    window.location.href = link;
+                }
+            });
+        });
+        
+        // 检查是否是移动设备
+        function isMobile() {
+            return window.innerWidth <= 768;
+        }
+        
+        gridItems.forEach(item => {
+            item.addEventListener('click', function(event) {
+                event.stopPropagation();
+                
+                // 移动端直接跳转
+                if (isMobile()) {
+                    const link = this.getAttribute('data-link');
+                    if (link) {
+                        window.location.href = link;
+                        return;
+                    }
+                }
+                
+                // 桌面端保持原有交互
+                if (this.classList.contains('show-second')) {
+                    this.classList.remove('show-second');
+                    this.classList.add('active');
+                    return;
+                }
+                
+                // 关闭其他打开的grid-item
+                gridItems.forEach(gridItem => {
+                    if (gridItem !== this) {
+                        gridItem.classList.remove('active', 'show-second');
+                    }
+                });
+                
+                this.classList.toggle('active');
+            });
+            
+            const overlayTop = item.querySelector('.overlay-top');
+            if (overlayTop) {
+                overlayTop.addEventListener('click', function(event) {
+                    // 移动端不执行这个事件
+                    if (isMobile()) {
+                        return;
+                    }
+                    event.stopPropagation();
+                    let parent = this.closest('.grid-item');
+                    parent.classList.remove('active');
+                    parent.classList.add('show-second');
+                });
+            }
+        });
+
+        // document点击事件
+        document.addEventListener('click', function(event) {
+            // 移动端不执行这个事件
+            if (isMobile()) {
+                return;
+            }
+            gridItems.forEach(gridItem => {
+                if (!gridItem.contains(event.target)) {
+                    gridItem.classList.remove('active', 'show-second');
+                }
+            });
+        });
+    });
+
+    // 优化 resize 事件处理
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        if (resizeTimeout) {
+            clearTimeout(resizeTimeout);
+        }
+        
+        resizeTimeout = setTimeout(setScale, 100);
+    });
+
+    function checkMobileView() {
+        if (window.innerWidth <= 768) {
+            document.documentElement.classList.add('mobile-view');
+            document.body.classList.add('mobile-view');
+        } else {
+            document.documentElement.classList.remove('mobile-view');
+            document.body.classList.remove('mobile-view');
+        }
+    }
+
+    // 页面加载和窗口调整时检查
+    window.addEventListener('load', checkMobileView);
+    window.addEventListener('resize', checkMobileView);
+    </script>
+</body>
+</html>
+<style>
+        /* 更新视频模态框样式 */
+        .video-modal .video-container {
+            width: 80%;
+            max-width: 1200px;
+            aspect-ratio: 16/9;
+        }
+        
+        .video-modal iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+   
+    </style>
+    <!-- 添加到body结束标签前 -->
+    <!-- 更新视频模态框结构 -->
+    <div class="video-modal" id="videoModal">
+        <span class="close-video">&times;</span>
+        <div class="video-container">
+            <iframe id="youtubeVideo" width="100%" height="100%" 
+                    src="" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <style>
+        /* 更新关闭按钮样式 */
+        .close-video {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1001;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .close-video:hover {
+            background: rgba(0,0,0,0.8);
+            transform: scale(1.1);
+        }
+    </style>
+    </style>
+    <script>
+        // 定义每个项目的YouTube视频ID
+        const videoIds = {
+            'history': 'Hlt-fmvrH-o', // 替换为实际视频ID
+            'business': 'B0J27sf9N1Y', // 替换为实际视频ID
+            'partner': 'dQw4w9WgXcQ',  // 替换为实际视频ID
+            // ...为每个项目添加对应的YouTube视频ID
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoModal = document.getElementById('videoModal');
+            const youtubeIframe = document.getElementById('youtubeVideo');
+            const closeBtn = videoModal.querySelector('.close-video');
+            
+            // 为所有"拡大再生"按钮添加点击事件
+            document.querySelectorAll('.grid-item').forEach(item => {
+                const link = item.getAttribute('data-link');
+                const pageKey = link.split('/')[0]; // 获取页面标识
+                
+                item.querySelector('.hover-button:last-child').onclick = function(e) {
+                    e.stopPropagation();
+                    const videoId = videoIds[pageKey] || 'dQw4w9WgXcQ'; // 默认视频ID
+                    youtubeIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                    videoModal.style.display = 'flex';
+                };
+            });
+            
+            // 关闭模态框
+            function closeModal() {
+                youtubeIframe.src = ''; // 停止播放视频
+                videoModal.style.display = 'none';
+            }
+            
+            // 点击关闭按钮
+            closeBtn.onclick = function(e) {
+                e.stopPropagation();
+                closeModal();
+            };
+            
+            // 点击模态框背景关闭
+            videoModal.onclick = function(e) {
+                if(e.target === videoModal) {
+                    closeModal();
+                }
+            };
+        });
+    </script>
+    <style>
+        /* 优化遮罩动画 - 确保只有一个定义 */
+        .grid-item-hover-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(10px);
+            pointer-events: none; /* 防止遮罩阻挡按钮点击 */
+        }
+        
+        .grid-item:hover .grid-item-hover-overlay {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto; /* 恢复按钮可点击 */
+        }
+        
+        /* 优化按钮动画 - 确保只有一个定义 */
+        .hover-button {
+            margin: 10px;
+            padding: 12px 24px; /* 稍微增加内边距 */
+            background: #fff;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            min-width: 150px; /* 使用min-width代替固定width */
+            text-align: center;
+            box-sizing: border-box;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateY(20px);
+            opacity: 0;
+            will-change: transform, opacity; /* 启用硬件加速 */
+        }
+        
+        /* 按钮错开动画 */
+        .grid-item:hover .hover-button:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+        
+        .grid-item:hover .hover-button:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+        
+        .grid-item:hover .hover-button {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .hover-button:hover {
+            background: #f5f5f5;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* 优化视频模态框动画 */
+        .video-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .video-modal video {
+            transform: scale(0.95);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .video-modal[style*="display: flex"] {
+            opacity: 1;
+        }
+        
+        .video-modal[style*="display: flex"] video {
+            transform: scale(1);
+        }
+    </style>

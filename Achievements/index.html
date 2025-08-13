@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRID - Business</title>
+    <link rel="stylesheet" href="../mobile.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <script src="../js/mobile.js"></script>
+    <style>
+ 
+  
+  .photo-group {
+    position: relative;
+    width: 350px;
+    height: 340px;
+    flex-shrink: 0;
+  }
+  
+  .photo-group .main-img {
+    width: 280px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+  
+  .photo-group .overlap-img {
+    position: absolute;
+    top: 260px;
+    left: 116px;
+    width: 220px;
+    border-radius: 6px;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    z-index: 2;
+  }
+  
+  .text-content {
+    flex: 1;
+    min-width: 250px;
+    max-width: 480px;
+    font-size: 14px;
+    color: #373434;
+    line-height: 1.8;
+  }
+  
+  .text-content p {
+    margin-bottom: 10px;
+  }
+    
+
+    .bold-line {
+        font-weight: bold;
+      }
+    
+        /* 只调整 .salary-info 里的 p 标签间距 */
+    .salary-info p {
+        margin-bottom: 20px; /* 两个 p 之间的间距（数值可改，如20px/30px） */
+        margin-top: 0; /* 避免顶部间距叠加 */
+        }
+        /* 移除最后一个 p 的底部间距（可选，避免多余空白） */
+    .salary-info p:last-of-type {
+        margin-bottom: 0;
+        }
+      .bold-line {
+        font-weight: bold;
+      }
+
+    .content-section {
+      
+      border-radius: 12px;
+      padding: 30px;
+      margin: 20px auto;
+      
+      transition: all 0.3s ease;
+      max-width: 1000px;
+    }
+    
+   
+    
+    .section-title {
+      color: #2c3e50;
+      border-left: 4px solid #3498db;
+      padding-left: 15px;
+      margin: 0px 0 15px;
+    }
+    
+    .salary-info, .holiday-info, .welfare-info {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    </style>
+    <style>
+    @media (max-width: 768px) {
+      .content-section {
+        padding: 20px;
+        margin: 15px 10px;
+      }
+      
+      .recruit-image img {
+        width: 308px;  
+        height: 160px; 
+        border-radius: 8px; 
+        object-fit: cover;
+      }
+      
+      .section-title {
+        font-size: 1.3rem;
+      }
+      
+      .salary-info, .holiday-info, .welfare-info {
+        padding: 10px;
+      }
+    }
+    </style>
+  </head>
+  <body class="business-page">
+    <div class="container">
+      <!-- mobile-header 头部 -->
+      <div class="mobile-header">
+        <!-- 左侧BUSINESS文字和背景 -->
+        <div class="side-text">
+          <div class="vertical-text">ACHIEVEMENTS</div>
+        </div>
+        <!-- 将logo移到这里 -->
+        <img
+          src="../images/logo.png"
+          alt="GRID Logo"
+          class="logo"
+          onclick="window.location.href='../index.html';"
+        />
+      </div>
+
+      <!-- 添加Business标题 -->
+      <div class="page-title">Achievements</div>
+
+ <!-- 左侧导航区域 -->
+ <div class="left-nav">
+  <!-- 第一个导航 -->
+  <div class="nav-box grid-style">
+    <img
+      src="../images/Manufacturing1.png"
+      alt="Image 1"
+      class="grid-image default-image"
+    />
+    <img
+      src="../images/Manufacturing2.png"
+      alt="Image 2"
+      class="grid-image hover-image"
+    />
+    <div class="overlay-images">
+      <img
+        src="../images/Manufacturing3.png"
+        alt="Image 3"
+        class="grid-image overlay-top"
+      />
+      <img
+        src="../images/Manufacturing4.png"
+        alt="Image 4"
+        class="grid-image overlay-bottom"
+        onclick="event.stopPropagation();"
+      />
+    </div>
+  </div>
+
+  <!-- 第二个导航 -->
+  <div class="nav-box grid-style">
+    <img
+      src="../images/Public1.png"
+      alt="Timeline 1"
+      class="grid-image default-image"
+    />
+    <img
+      src="../images/Public2.png"
+      alt="Timeline 2"
+      class="grid-image hover-image"
+    />
+    <div class="overlay-images">
+      <img
+        src="../images/Public3.png"
+        alt="Timeline 3"
+        class="grid-image overlay-top"
+      />
+      <img
+        src="../images/Public4.png"
+        alt="Timeline 4"
+        class="grid-image overlay-bottom"
+        onclick="event.stopPropagation();"
+      />
+    </div>
+  </div>
+
+  <!-- 第三个导航 -->
+   <div class="nav-box grid-style"> 
+    <img
+      src="../images/Healthcare1.png"
+      alt="Image 1"
+      class="grid-image default-image"
+    />
+    <img
+      src="../images/Healthcare2.png"
+      alt="Image 2"
+      class="grid-image hover-image"
+    />
+    <div class="overlay-images">
+      <img
+        src="../images/Healthcare3.png"
+        alt="Image 3"
+        class="grid-image overlay-top"
+      />
+      <img
+        src="../images/Healthcare4.png"
+        alt="Image 4"
+        class="grid-image overlay-bottom"
+        onclick="event.stopPropagation();"
+      />
+    </div>
+  </div>
+
+  <!-- 第四个导航 -->
+  <div class="nav-box grid-style">
+    <img
+      src="../images/communication1.png"
+      alt="Image 1"
+      class="grid-image default-image"
+    />
+    <img
+      src="../images/communication2.png"
+      alt="Image 2"
+      class="grid-image hover-image"
+    />
+    <div class="overlay-images">
+      <img
+        src="../images/communication3.png"
+        alt="Image 3"
+        class="grid-image overlay-top"
+      />
+      <img
+        src="../images/communication4.png"
+        alt="Image 4"
+        class="grid-image overlay-bottom"
+        onclick="event.stopPropagation();"
+      />
+    </div>
+  </div>
+</div>
+
+
+    
+     <!-- mobile主内容区域 -->
+     <div class="main-content mobile-content">
+      <div class="content-section mobile-content-step si-content">
+        <div class="recruit-image">
+          <img
+            src="../images/main_parts_0000926130_10.jpg"
+            alt="System Optimization"
+          />
+        </div>
+
+        <h2 class="section-title">MPセンター</h2>
+          <div class="salary-info">
+            <p>◇ <span class="bold-line">顧客に対して安定的かつ高効率なシステム運用保守を提供する、当社の運用基盤の中核チームです。
+              24時間体制での安定稼働を支えるだけでなく、SLA達成を可視化・標準化・ツール化し、運用の高度化を実現します。</p>
+            <p>◇ <span class="bold-line">主な業務</span><br>1、製薬・製造系システムの保守・障害対応
+              <br>2、SLAに基づいた動的見積・監視の見える化・異常予測・セキュリティ対応
+              <br>3、運用プロセスの標準化と安定運用の支援 </p>
+            <p>◇ <span class="bold-line">チーム構成</span><br>センター責任者 1 名と分野別責任者 4 名を中核とし、
+              エンジニア十数名を加えて専門的な運用・維持チームを編成し、高い安定性と多様性を併せ持つ支援体制を構築しています </p>
+            <p>◇ <span class="bold-line">学習と成長</span><br>Lark上にナレッジとテンプレートを蓄積し、
+              監視・アラート・SLA設計などをテーマに継続的に演習・検証を実施しています。 </p>
+            <p>◇ <span class="bold-line">将来ビジョン</span><br>Larkを活用してSLA運用ツールを構築し、
+              対外提供可能なサービスパッケージとして製品化を目指します。</p>
+          </div>
+      </div>
+
+      <div
+        class="content-section mobile-content-step dx-content"
+        style="display: none"
+      >
+        <div class="recruit-image">
+          <img src="../images/main_parts_0000926156_13.jpg" alt="Process Optimization" />
+        </div>
+
+        <h2 class="section-title">DXセンター</h2>
+          <div class="salary-info">
+            <p>◇ <span class="bold-line">新規開発やシステムまるごと受託に対応する推進チームとして、
+              DXセンターは顧客企業に対してエンドツーエンドのソリューションを提供します。構想から構築、運用まで一貫して対応可能です。</p>
+            <p>◇ <span class="bold-line">主な業務</span><br>1、新規開発案件の提案・管理・納品
+              <br>2、システム横断型・組織横断型の展開支援
+              <br>3、まる投げ可能な体制と管理能力の確立</p>
+            <p>◇ <span class="bold-line">チーム構成</span><br>センター長1名、バー長3名、エンジニア数名で構成され、
+              柔軟かつ即応性の高い体制を備えています。</p>
+            <p>◇ <span class="bold-line">学習と成長</span><br>「なぜまる投げされないか」を構造化し、
+              提案力・技術構成力の向上に向けてプロジェクト学習を体系的に行っています。 </p>
+            <p>◇ <span class="bold-line">将来ビジョン</span><br>提案から開発・運用までのナレッジをテンプレート化し、
+              安心して任せられる“まる投げ可能な”DX支援体制を構築していきます。</p>
+          </div>
+
+      </div>
+
+     <div 
+        class="content-section mobile-content-step infra-content"
+        style="display: none"
+      >
+        <div class="recruit-image">
+          <img src="../images/main_parts_0000926171_11.jpg" alt="New Graduate Education" />
+        </div>
+
+        <h2 class="section-title">AI業務アーキテクチャデザインセンター</h2>
+          <div class="salary-info">
+            <p>◇ <span class="bold-line">AIと業務の融合を目的とし、
+              予測精度向上・業務パーソナライズ・AIネイティブ組織構築までを支援する戦略設計チームです。</p>
+            <p>◇ <span class="bold-line">主な業務</span><br>1、AIによる自律的業務設計・予測モデルの構築
+              <br>2、業界特化型AIソリューションと顧客共創の支援
+              <br>3、AI倫理・説明性・透明性のガイドライン整備 </p>
+            <p>◇ <span class="bold-line">チーム構成</span><br>チームは、センター責任者 1 名、機能別責任者 4 名、および 
+              AI / 業務混成メンバー十数名で構成され、AI 戦略、システム設計、組織変革など複数の専門分野をカバーしています</p>
+            <p>◇ <span class="bold-line">学習と成長</span><br>多数の案件ヒアリングと自動化テンプレート検証を通じて、
+              Lark上にAI業務設計のナレッジを継続的に蓄積しています。 </p>
+            <p>◇ <span class="bold-line">将来ビジョン</span><br>人中心のAI導入を前提に、
+              AIネイティブな組織と持続可能なビジネスの再構築を支援していきます。</p>
+          </div>
+      </div>
+
+      
+       <!-- <div  
+        class="content-section mobile-content-step security-content"
+        style="display: none"
+      >
+        <div class="recruit-image">
+          <img
+            src="../images/5d00bc5a2f2.jpg"
+            alt="System Optimization"
+          />
+        </div>
+
+        <h2 class="section-title">総合職</h2>
+          <div class="salary-info">
+            <p>◇ <span class="bold-line">仕事内容</span><br>・顧客対応（電話/メール/来客）
+              <br>・事務作業（資料作成、データ入力、経理補助）
+              <br> ・営業サポート（見積もり作成、契約書準備）
+              <br> ・商品管理（発注、在庫確認）
+              <br> ・簡単なWeb更新（WordPress等） 
+              <br>※業務範囲は適性により調整します</p>
+            <p>◇ <span class="bold-line">応募資格・条件</span><br>学歴不問 / 経験者のみ募集
+              </p>
+            <p>◇ <span class="bold-line">募集人数</span><br>業務拡大と伴い、1名以上の増員を計画しています。</p>
+            <p>◇ <span class="bold-line">勤務地/アクセス</span><br>東京都中央区八丁堀3丁目-JP-BASE京橋  2階
+              <br>◇ 銀座線 「京橋」駅 徒歩 6分、
+              日比谷線 「八丁堀」駅 徒歩 3分、
+              都営浅草線 「宝町」駅 徒歩 3分、
+              JR京葉線 「八丁堀」駅 徒歩 3分 </p>
+            <p>◇ <span class="bold-line">勤務時間</span><br>フレックスタイム制
+              <br>フレックスタイム制
+              <br>完全週休二日制で土日祝は休日ですが、多忙期には休日出勤して頂き、代休を取って頂く場合もございます
+              <br>標準労働時間：7.5時間業務+1時間休憩
+              <br>コアタイム10:00~16:00
+              <br>※現在は主にリモート勤務を推奨しており、社員の約9割が在宅勤務中です</p>
+            <p>◇ <span class="bold-line">給与</span><br>年俸 3,000,000円 ～ 6,000,000円
+              <br>月給 250,000円 ～ 500,000円 （※想定年収 3,000,000円 ～ 6,000,000円）
+              <br>年齢・経験を考慮して優遇します </p> 
+            <p>◇ <span class="bold-line">休日休暇</span><br>年間休日120日以上
+              <br>完全週休二日制
+              <br>有給休暇（入社半年後に付与）
+              <br>介護休暇
+              <br>育児休暇
+              <br>慶弔休暇 </p> 
+            <p>◇ <span class="bold-line">福利厚生</span><br>年俸制:300万円~400万円を12分割し月給として支給
+              <br>社会保険完備
+              <br>交通費全額支給
+              <br>年1回の健康診断は会社全額負担
+              <br>昇給年1回
+              <br>社員旅行
+              <br>帰省手当支給(最大10万円/年を全員に支給)
+              <br>資格取得補助
+              <br>不定期業績ボーナス支給あり(半期毎に1回、利益状況に応じて)
+              <br>退職金制度あり
+              <br>服装自由
+              <br>ネイルOK </p> 
+      </div>
+      </div>-->
+    </div>
+  </div>
+
+  <!-- PC端内容容器 -->
+  <div class="business-content pc-content">
+    
+     <div class="content-section content-section-step si-content" style="display: block;">
+      <div class="flex-layout" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+        <!-- 左图组 -->
+         <div class="photo-group">
+          <img src="https://zjpdvsey7opi.jp.larksuite.com/base/V4BqbJw0sany5xsp3MbjF1Ktplb?field=fldu2xgO0S&record=reclAyoQrq&table=tblF20kXqly4UCVH&view=vewYGTi7yY" alt="社員写真1" class="main-img">
+          <img src="../images/5d00b95297a7f.jpg" alt="社員写真2" class="overlap-img">
+         </div>
+
+        
+         <div class="text-content">
+          <h2 class="section-title">金融業</h2>
+          <p>◇ <span class="bold-line">支援範囲</span><br>要件定義～リリース、運用保守 </p>
+          <p>◇ <span class="bold-line">プロジェクト概要</span><br>地銀の顧客管理・営業支援CRMシステムの構築 </p>
+          <p>◇ <span class="bold-line">成果</span><br>モバイル運用で情報の即時記録、共有が可能、営業の効率化を実現</p>
+          <p>◇ <span class="bold-line">技術アタック</span><br>FSC(Financial Services Cloud)、Mulesoft、Tableau</p>
+           <p>◇ <span class="bold-line">規模感</span><br>約300人月、構築期間は約1年</p>
+        </div>
+       </div>
+  <!-- <div class="salary-info"> 
+    <p>◇ <span class="bold-line">顧客に対して安定的かつ高効率なシステム運用保守を提供する...</span></p>
+   
+  </div>-->
+</div>
+
+
+    
+    
+    <div class="content-section content-section-step si-content" style="display:  none;">
+      <div class="flex-layout" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+        <!-- 左图组 -->
+         <div class="photo-group">
+          <img src="../images/1744269561828.jpg" alt="社員写真1" class="main-img">
+          <img src="../images/1744269561828.jpg" alt="社員写真2" class="overlap-img">
+         </div>
+
+        
+         <div class="text-content">
+          <h2 class="section-title">金融業</h2>
+          <p>◇ <span class="bold-line">支援範囲</span><br>要件定義～リリース、運用保守 </p>
+          <p>◇ <span class="bold-line">プロジェクト概要</span><br>地銀の顧客管理・営業支援CRMシステムの構築 </p>
+          <p>◇ <span class="bold-line">成果</span><br>モバイル運用で情報の即時記録、共有が可能、営業の効率化を実現</p>
+          <p>◇ <span class="bold-line">技術アタック</span><br>FSC(Financial Services Cloud)、Mulesoft、Tableau</p>
+           <p>◇ <span class="bold-line">規模感</span><br>約300人月、構築期間は約1年</p>
+        </div>
+       </div>
+  <!-- <div class="salary-info"> 
+    <p>◇ <span class="bold-line">顧客に対して安定的かつ高効率なシステム運用保守を提供する...</span></p>
+   
+  </div>-->
+</div>
+
+     
+    <div class="content-section content-section-step infra-content" style="display:  none;">
+      <div class="flex-layout" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+        <!-- 左图组 -->
+         <div class="photo-group">
+          <img src="../images/17859409.jpg" alt="社員写真1" class="main-img">
+          <img src="../images/1744269561828.jpg" alt="社員写真2" class="overlap-img">
+         </div>
+
+        
+         <div class="text-content">
+          <h2 class="section-title">金融業</h2>
+          <p>◇ <span class="bold-line">支援範囲</span><br>要件定義～リリース、運用保守 </p>
+          <p>◇ <span class="bold-line">プロジェクト概要</span><br>地銀の顧客管理・営業支援CRMシステムの構築 </p>
+          <p>◇ <span class="bold-line">成果</span><br>モバイル運用で情報の即時記録、共有が可能、営業の効率化を実現</p>
+          <p>◇ <span class="bold-line">技術アタック</span><br>FSC(Financial Services Cloud)、Mulesoft、Tableau</p>
+           <p>◇ <span class="bold-line">規模感</span><br>約300人月、構築期間は約1年</p>
+        </div>
+       </div>
+  <!-- <div class="salary-info"> 
+    <p>◇ <span class="bold-line">顧客に対して安定的かつ高効率なシステム運用保守を提供する...</span></p>
+   
+  </div>-->
+</div>
+
+<div class="content-section content-section-step security-content" style="display:  none;">
+  <div class="flex-layout" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+    <!-- 左图组 -->
+     <div class="photo-group">
+      <img src="../images/17859409.jpg" alt="社員写真1" class="main-img">
+      <img src="../images/1744269561828.jpg" alt="社員写真2" class="overlap-img">
+     </div>
+
+    
+     <div class="text-content">
+       <h2 class="section-title">金融業</h2>
+       <p>◇ <span class="bold-line">支援範囲</span><br>要件定義～リリース、運用保守 </p>
+       <p>◇ <span class="bold-line">プロジェクト概要</span><br>地銀の顧客管理・営業支援CRMシステムの構築 </p>
+       <p>◇ <span class="bold-line">成果</span><br>モバイル運用で情報の即時記録、共有が可能、営業の効率化を実現</p>
+       <p>◇ <span class="bold-line">技術アタック</span><br>FSC(Financial Services Cloud)、Mulesoft、Tableau</p>
+        <p>◇ <span class="bold-line">規模感</span><br>約300人月、構築期間は約1年</p>
+     </div>
+   </div>
+<!-- <div class="salary-info"> 
+<p>◇ <span class="bold-line">顧客に対して安定的かつ高効率なシステム運用保守を提供する...</span></p>
+
+</div>-->
+　　　　</div>
+  </div>
+
+    <script>
+      function setScale() {
+        const container = document.querySelector(".container");
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        const baseScaleX = windowWidth / 1920;
+        const baseScaleY = windowHeight / 1080;
+        let scale = Math.min(baseScaleX, baseScaleY);
+
+        // 调整logo位置
+        const logo = document.querySelector(".logo");
+        if (windowHeight <= 800) {
+          logo.style.top = "120px"; // 小屏幕上的位置
+        } else {
+          logo.style.top = "100px"; // 正常屏幕上的位置
+        }
+
+        // 大屏幕不缩放
+        if (windowWidth >= 1920 && windowHeight >= 1080) {
+          scale = 1;
+        } else {
+          // 限制最小缩放比例为0.65
+          scale = Math.max(scale, 0.65);
+        }
+
+        document.documentElement.style.setProperty("--scale-ratio", scale);
+      }
+
+      function debounce(func, wait) {
+        let timeout;
+        return function () {
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(this, arguments), wait);
+        };
+      }
+
+      window.addEventListener("resize", debounce(setScale, 100));
+      window.addEventListener("load", setScale);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 获取所有grid-style导航和内容区域
+        const gridNavs = document.querySelectorAll(".nav-box.grid-style");
+        const contentSections = document.querySelectorAll(".content-section-step");
+        
+        const mobileContentSections = document.querySelectorAll(".mobile-content-step");
+        // 默认显示第一个内容
+        contentSections[0].style.display = "block";
+
+        // 添加调试日志函数
+        function debugLog(message) {
+          console.log("[ScrollDebug]", message);
+        }
+
+        gridNavs.forEach((gridNav, index) => {
+          gridNav.addEventListener("click", function (event) {
+            event.stopPropagation();
+            let targetContent;
+
+            if (isMobile()) {
+              // 切换内容显示
+              mobileContentSections.forEach((section, sectionIndex) => {
+                const isActive = sectionIndex === index;
+                section.style.display = isActive ? "block" : "none";
+                if (isActive) {
+                  targetContent = section;
+                  debugLog("Mobile content activated: " + sectionIndex);
+                }
+              });
+            } else {
+              // 切换内容显示
+              contentSections.forEach((section, sectionIndex) => {
+                const isActive = sectionIndex === index;
+                section.style.display = isActive ? "block" : "none";
+                if (isActive) {
+                  targetContent = section;
+                  debugLog("Desktop content activated: " + sectionIndex);
+                }
+              });
+            }
+
+            // 关键修复：增加延迟确保内容完全渲染
+            setTimeout(() => {
+              if (!targetContent) {
+                debugLog("Target content not found");
+                return;
+              }
+
+              // 1. 强制重置页面滚动
+              window.scrollTo(0, 0); // 使用非平滑滚动确保兼容性
+              debugLog("Page scroll reset");
+
+              // 2. 查找并重置所有可能的滚动容器
+              const scrollContainers = targetContent.querySelectorAll(".salary-info, .holiday-info, .welfare-info, div[style*='overflow-y'], div[style*='overflow-x']");
+              
+              if (scrollContainers.length === 0) {
+                // 如果没有找到特定容器，尝试重置目标内容本身
+                targetContent.scrollTop = 0;
+                debugLog("No specific containers found, reset target content scroll");
+              } else {
+                scrollContainers.forEach(container => {
+                  container.scrollTop = 0;
+                  debugLog("Reset scroll for container: " + container.className);
+                });
+              }
+
+              // 3. 额外保障：使用scrollIntoView
+              targetContent.scrollIntoView({ behavior: 'auto', block: 'start' });
+              debugLog("scrollIntoView executed");
+            }, 100); // 增加延迟到100ms确保内容渲染
+
+            if (this.classList.contains("show-second")) {
+              this.classList.remove("show-second");
+              this.classList.add("active");
+              return;
+            }
+
+            // 关闭其他打开的grid-style
+            gridNavs.forEach((nav) => {
+              if (nav !== this) {
+                nav.classList.remove("active", "show-second");
+              }
+            });
+
+            this.classList.toggle("active");
+          });
+
+          const overlayTop = gridNav.querySelector(".overlay-top");
+          if (overlayTop) {
+            overlayTop.addEventListener("click", function (event) {
+              event.stopPropagation();
+              let parent = this.closest(".nav-box.grid-style");
+              parent.classList.remove("active");
+              parent.classList.add("show-second");
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.icon-check {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(../images/check-icon.svg) no-repeat;
+  margin-right: 10px;
+}
+</style>

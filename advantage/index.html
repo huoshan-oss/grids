@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GRID - Business</title>
+    <link rel="stylesheet" href="../mobile.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <script src="../js/mobile.js"></script>
+    <style>
+
+    /* 添加在原有样式之后 */
+    /* 局部限定作用于 business-advantage-section 中的卡片 */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;  
+      gap: 24px;
+      padding: 40px 0;
+    }
+    
+    
+    .card {
+      flex: 1 1 calc(33.333% - 24px); /* 一排三个，减去 gap */
+      background: #fff;
+      border-radius: 6px;
+      height: 310px; 
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+    
+    .card.reverse {
+      flex-direction: column-reverse;
+    }
+    
+    
+    .card img {
+      height: 160px;
+      object-fit: cover;
+    }
+    .card-text {
+      flex: 1;
+      padding: 8px;
+    }
+    
+    
+    .card-text h3 {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.4;
+      margin: 20px 0 10px;
+    }
+    
+    .card-text p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    
+    .card-text a {
+      color: #d39600;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    
+    .card-text a::after {
+      content: ' »';
+      font-weight: bold;
+    }
+    
+
+
+    .advantages {
+      background: linear-gradient(135deg, #eef3f8, #ffffff);
+      padding: 80px 20px;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #007bff;
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+    .advantage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .advantage-item {
+      background: #fff;
+      padding: 20px 20px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+      position: relative;
+      text-align: center;
+    }
+    .advantage-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+    }
+    .advantage-item h3 {
+      font-size: 20px;
+      margin-top: 16px;
+      color: #333;
+    }
+    .advantage-item p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555;
+      margin-top: 12px;
+    }
+    .icon-circle {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto;
+      color: #fe8c8c;
+      background-color: #e3f2fd;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon-circle img {
+      width: 32px;
+      height: 32px;
+    }
+   
+      .bold-line {
+        font-weight: bold;
+      }
+      .salary-info p {
+        margin-bottom: 20px; /* 两个 p 之间的间距（数值可改，如20px/30px） */
+        margin-top: 0; /* 避免顶部间距叠加 */
+        }
+        /* 移除最后一个 p 的底部间距（可选，避免多余空白） */
+    .salary-info p:last-of-type {
+        margin-bottom: 0;
+        }
+      .bold-line {
+        font-weight: bold;
+      }
+
+
+    .content-section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 0px;
+      margin: 20px auto;
+      transition: all 0.3s ease;
+      max-width: 1000px;
+    }
+    
+    
+    
+    .section-title {
+      color: #2c3e50;
+      padding-left: 15px;
+      margin: 0px 0 24px;
+    }
+    
+    .salary-info, .holiday-info, .welfare-info {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    
+    .icon-check {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: url(../images/check-icon.svg) no-repeat;
+      margin-right: 10px;
+    }
+    </style>
+    <style>
+      @media (max-width: 768px) {
+        .advantage-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .advantage-item {
+          padding: 20px 15px;
+        }
+        .section-title {
+          font-size: 24px;
+          margin-bottom: 40px;
+        }
+        .advantage-item h3 {
+          font-size: 18px;
+        }
+        .advantage-item p {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body class="business-page">
+    <div class="container">
+      <!-- mobile-header 头部 -->
+      <div class="mobile-header">
+        <!-- 左侧BUSINESS文字和背景 -->
+        <div class="side-text">
+          <div class="vertical-text">ADVANTAGE</div>
+        </div>
+        <!-- 将logo移到这里 -->
+        <img
+          src="../images/logo.png"
+          alt="GRID Logo"
+          class="logo"
+          onclick="window.location.href='../index.html';"
+        />
+      </div>
+
+      <!-- 添加Business标题 -->
+      <div class="page-title">Advantage</div>
+
+    
+     <!-- mobile主内容区域 -->
+     <div class="main-content mobile-content">
+      <div class="content-section advantage-section">
+        <h2 class="section-title">私たちの強み</h2>
+        <div class="advantage-grid">
+  
+         <div class="advantage-item">
+           <div class="icon-circle">
+             <img src="/icons/multi-field-exp.svg" alt="经验" />
+           </div>
+           <h3>多業界での豊富なプロジェクト実績</h3>
+           <p>金融・教育・公共・製造など、多業界で700件以上のプロジェクト実績。</p>
+         </div>
+  
+         <div class="advantage-item">
+           <div class="icon-circle">
+             <img src="/icons/end-service.svg" alt="全流程" />
+           </div>
+           <h3>	ワンストップサービス対応力</h3>
+           <p>要件定義から運用保守までワンストップ対応。</p>
+          </div>
+  
+         <div class="advantage-item">
+           <div class="icon-circle">
+             <img src="/icons/cross-tech.svg" alt="平台" />
+           </div>
+           <h3>クロスプラットフォーム技術力</h3>
+           <p>Salesforce×Databricksの統合開発、マルチクラウド対応。</p>
+         </div>
+  
+         <div class="advantage-item">
+           <div class="icon-circle">
+             <img src="/icons/pro-team.svg" alt="团队" />
+           </div>
+           <h3>高スキルな専門チーム</h3>
+           <p>Salesforce資格180件以上、Databricks認定エンジニア17名。</p>
+         </div>
+  
+         <div class="advantage-item">
+           <div class="icon-circle">
+             <img src="/icons/quick-full-dev.svg" alt="交付" />
+           </div>
+           <h3>高速開発とまるごと開発対応力</h3>
+           <p>テンプレート活用で工数1/5、整包開発も対応可能。</p>
+         </div>
+  
+       </div>
+     </div>
+      
+    </div>
+  </div>
+
+  <!-- PC端内容容器 -->
+  <div class="business-content  pc-content">
+    <!-- Advantage 模块：PC端展示 -->
+    <div class="content-section advantage-section">
+      <h2 class="section-title">私たちの強み</h2>
+      <div class="advantage-grid">
+
+        <div class="card-container">
+          <div class="card reverse">
+            <img src="../images/12_MTG.jpg" alt="" />
+            <div class="card-text">
+              <h3><strong>多業界での豊富なプロジェクト実績</strong> </h3>
+              <p>金融・教育・公共・製造など、多業界で700件以上のプロジェクト実績。</p>
+            </div>
+          </div>
+        
+          <div class="card">
+            <img src="../images/12_MTG.jpg" alt="" />
+            <div class="card-text">
+              <h3>ワンストップサービス対応力</h3>
+              <p>要件定義から運用保守までワンストップ対応</p>
+            </div>
+          </div>
+        
+          <div class="card reverse">
+            <img src="../images/12_MTG.jpg" alt="" />
+            <div class="card-text">
+              <h3><strong>クロスプラットフォーム技術力</strong> </h3>
+              <p>Salesforce×Databricksの統合開発、マルチクラウド対応。</p>
+            </div>
+          </div>
+
+          <div class="card reverse">
+            <img src="../images/12_MTG.jpg" alt="" />
+            <div class="card-text">
+              <h3><strong>高スキルな専門チーム</strong></h3>
+              <p>Salesforce資格180件以上、Databricks認定エンジニア17名。</p>
+            </div>
+          </div>
+        
+          <div class="card reverse">
+            <img src="../images/12_MTG.jpg" alt="" />
+            <div class="card-text">
+              <h3>高速開発とまるごと開発対応力</h3>
+              <p>テンプレート活用で工数1/5、整包開発も対応可能。</p>
+            </div>
+          </div>
+
+        </div>
+        
+
+     </div>
+   </div>
+  </div>
+
+    <script>
+      function setScale() {
+        const container = document.querySelector(".container");
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        const baseScaleX = windowWidth / 1920;
+        const baseScaleY = windowHeight / 1080;
+        let scale = Math.min(baseScaleX, baseScaleY);
+
+        // 调整logo位置
+        const logo = document.querySelector(".logo");
+        if (windowHeight <= 800) {
+          logo.style.top = "120px"; // 小屏幕上的位置
+        } else {
+          logo.style.top = "100px"; // 正常屏幕上的位置
+        }
+
+        // 大屏幕不缩放
+        if (windowWidth >= 1920 && windowHeight >= 1080) {
+          scale = 1;
+        } else {
+          // 限制最小缩放比例为0.65
+          scale = Math.max(scale, 0.65);
+        }
+
+        document.documentElement.style.setProperty("--scale-ratio", scale);
+      }
+
+      function debounce(func, wait) {
+        let timeout;
+        return function () {
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(this, arguments), wait);
+        };
+      }
+
+      window.addEventListener("resize", debounce(setScale, 100));
+      window.addEventListener("load", setScale);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // 获取所有grid-style导航和内容区域
+        const gridNavs = document.querySelectorAll(".nav-box.grid-style");
+        const contentSections = document.querySelectorAll(".content-section-step");
+        const mobileContentSections = document.querySelectorAll(".mobile-content-step");
+        // 默认显示第一个内容
+        contentSections[0].style.display = "block";
+
+        // 添加调试日志函数
+        function debugLog(message) {
+          console.log("[ScrollDebug]", message);
+        }
+
+        gridNavs.forEach((gridNav, index) => {
+          gridNav.addEventListener("click", function (event) {
+            event.stopPropagation();
+            let targetContent;
+
+            if (isMobile()) {
+              // 切换内容显示
+              mobileContentSections.forEach((section, sectionIndex) => {
+                const isActive = sectionIndex === index;
+                section.style.display = isActive ? "block" : "none";
+                if (isActive) {
+                  targetContent = section;
+                  debugLog("Mobile content activated: " + sectionIndex);
+                }
+              });
+            } else {
+              // 切换内容显示
+              contentSections.forEach((section, sectionIndex) => {
+                const isActive = sectionIndex === index;
+                section.style.display = isActive ? "block" : "none";
+                if (isActive) {
+                  targetContent = section;
+                  debugLog("Desktop content activated: " + sectionIndex);
+                }
+              });
+            }
+
+            // 关键修复：增加延迟确保内容完全渲染
+            setTimeout(() => {
+              if (!targetContent) {
+                debugLog("Target content not found");
+                return;
+              }
+
+              // 1. 强制重置页面滚动
+              window.scrollTo(0, 0); // 使用非平滑滚动确保兼容性
+              debugLog("Page scroll reset");
+
+              // 2. 查找并重置所有可能的滚动容器
+              const scrollContainers = targetContent.querySelectorAll(".salary-info, .holiday-info, .welfare-info, div[style*='overflow-y'], div[style*='overflow-x']");
+              
+              if (scrollContainers.length === 0) {
+                // 如果没有找到特定容器，尝试重置目标内容本身
+                targetContent.scrollTop = 0;
+                debugLog("No specific containers found, reset target content scroll");
+              } else {
+                scrollContainers.forEach(container => {
+                  container.scrollTop = 0;
+                  debugLog("Reset scroll for container: " + container.className);
+                });
+              }
+
+              // 3. 额外保障：使用scrollIntoView
+              targetContent.scrollIntoView({ behavior: 'auto', block: 'start' });
+              debugLog("scrollIntoView executed");
+            }, 100); // 增加延迟到100ms确保内容渲染
+
+            if (this.classList.contains("show-second")) {
+              this.classList.remove("show-second");
+              this.classList.add("active");
+              return;
+            }
+
+            // 关闭其他打开的grid-style
+            gridNavs.forEach((nav) => {
+              if (nav !== this) {
+                nav.classList.remove("active", "show-second");
+              }
+            });
+
+            this.classList.toggle("active");
+          });
+
+          const overlayTop = gridNav.querySelector(".overlay-top");
+          if (overlayTop) {
+            overlayTop.addEventListener("click", function (event) {
+              event.stopPropagation();
+              let parent = this.closest(".nav-box.grid-style");
+              parent.classList.remove("active");
+              parent.classList.add("show-second");
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

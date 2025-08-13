@@ -1,0 +1,305 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #fff;
+  overflow: hidden;
+}
+
+.container {
+  width: 1920px;
+  height: 1080px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: top center;
+  transform: scale(var(--scale-ratio, 1));
+  position: relative;
+  margin-top: 20px;
+}
+
+.home-container::before{
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 200px;
+  background: #f00;
+  left: 5%;
+  top: 10%;
+  z-index: -1;
+  background: url('images/background1.png') no-repeat center center;
+}
+.home-container::after {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 200px;
+  background: #f00;
+  right: 0%;
+  bottom: 10%;
+  z-index: -1;
+  background: url('images/background2.png') no-repeat center center;
+}
+
+.header {
+  text-align: center;
+  margin: 0px 0 40px;
+}
+
+.header h1 {
+  font-size: 80px;
+  font-weight: normal;
+  margin-bottom: -10px;
+}
+
+.header .subtitle {
+  font-size: 28px;
+  font-weight: 200;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  grid-template-rows: repeat(3, auto);
+  gap: 30px 20px;
+  width: 1260px;
+  margin-top: -60px;
+}
+
+.grid-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: visible;
+  background: #fff;
+  cursor: pointer;
+  height: 160px;
+  min-width: 300px;
+}
+
+.grid-image {
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+/* 图片定位 */
+.default-image,
+.hover-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.15s ease-out;
+  backface-visibility: hidden;
+  will-change: opacity;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 初始状态 - 分开处理2.png和3.png/4.png */
+.hover-image {
+  opacity: 0;
+  /* 移除visibility属性 */
+}
+
+.overlay-images {
+  opacity: 0;
+  visibility: hidden; /* 保持3.png/4.png的visibility效果 */
+}
+
+/* hover效果 - 只针对2.png */
+.grid-item:hover:not(.active) .default-image {
+  opacity: 0;
+}
+
+.grid-item:hover:not(.active) .hover-image {
+  opacity: 1;
+  /* 移除visibility属性 */
+}
+
+/* 其他图片保持原有过渡效果 */
+.overlay-top,
+.overlay-bottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease;
+  transform-origin: center center;
+}
+
+/* 重叠图片的位置 */
+.overlay-top {
+  z-index: 2;
+  top: 24px;
+  transform: translateX(-50%);  /* 移除scale(1) */
+}
+
+.overlay-bottom {
+  top: -80px;
+  z-index: 1;
+  transform: translateX(-50%);  /* 移除scale(1.2) */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 修改点击后的状态，确保2.png保留 */
+.grid-item.active .default-image {
+  opacity: 0;
+}
+
+.grid-item.active .hover-image {
+  opacity: 1;
+  visibility: visible;
+}
+
+.grid-item.active .overlay-images {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 点击3.png后的状态 */
+.grid-item.show-second .overlay-images {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* 当父元素是active状态时，鼠标移到4.png上的效果 */
+.grid-item.active .overlay-bottom:hover {
+  transform: translateX(-50%) scale(1.1);  /* 恢复到原来的1.1倍 */
+  cursor: pointer;
+}
+
+/* 不需要再次设置hover-image的状态，因为已经在active状态下显示了 */ 
+
+/* 添加媒体查询 */
+@media screen and (max-width: 1920px) {
+  .grid-container {
+    gap: 20px 15px;
+  }
+
+}
+@media screen and (max-width: 1540px) {
+
+  .home-container::before{
+    left:0%;
+    top: 7%;
+  }
+  .home-container::after {
+    bottom: 10%;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .grid-container {
+    gap: 15px 10px;
+  }
+  .home-container::before{
+    left:0%;
+    top: 10%;
+  }
+  .home-container::after {
+    bottom: 3%;
+  }
+}
+@media screen and (max-width: 1340px) {
+ 
+  .home-container::before{
+    left:0%;
+    top: 10%;
+  }
+  .home-container::after {
+    bottom: 3%;
+  }
+}
+@media screen and (max-width: 1240px) {
+ 
+  .home-container::before{
+    left:0%;
+    top: 10%;
+  }
+  .home-container::after {
+    bottom: 3%;
+  }
+}
+@media screen and (max-width: 1140px) {
+ 
+  .home-container::before{
+    left:0%;
+    top: 10%;
+  }
+  .home-container::after {
+    bottom: 13%;
+  }
+}
+/* 添加移动端覆盖样式 */
+@media screen and (max-width: 768px) {
+  .grid-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: auto !important;
+    gap: 15px !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    height: auto !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin: 0 auto !important;
+  }
+
+  .grid-item {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1/1 !important;
+    min-width: unset !important;
+    max-width: none !important;
+    position: relative !important;
+    transform: none !important;
+  }
+  .home-container::before{
+    left:22%;
+    top: 8%;
+  }
+}
+
+/* 背景图片样式 */
+.background-image1index img {
+    /* width: 300px;  可以调整宽度 */
+    /* height: auto; */
+    position: absolute;
+    top: 50px;     /* 可以调整上边距 */
+    left: 50px;    /* 可以调整左边距 */
+    z-index: -1;   /* 确保在导航下方 */
+    opacity: 0.8;  /* 可以调整透明度 */
+}
+.background-image2index img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.background-image2index img {
+    /* width: 500px;  可以调整宽度 */
+    /* height: auto; */
+    position: absolute;
+    bottom: 50px;  /* 可以调整下边距 */
+    right: 50px;   /* 可以调整右边距 */
+    z-index: -2;   /* 确保在最底层 */
+    opacity: 0.8;  /* 可以调整透明度 */
+}
+
+/* 只在PC端显示背景图片 */
+@media screen and (max-width: 768px) {
+    .background-image1index,
+    .background-image2index {
+        display: none;
+    }
+} 

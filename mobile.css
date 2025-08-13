@@ -1,0 +1,771 @@
+/* 移动端样式将在这里重新编写 */
+
+/* 移动端基础样式 (768px及以下) */
+@media screen and (max-width: 768px) and (min-width: 0px) {
+    /* 通用移动端样式 */
+    html.mobile-view,
+    body.mobile-view {
+        width: 100%;
+        overflow: hidden !important;
+        height: 100% !important;
+        position: fixed !important;
+        left: 0 !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+    }
+
+    .mobile-view .container {
+        width: 100% !important;
+        height: 100% !important;
+        position: relative !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+
+    .mobile-view .side-text {
+        position: fixed !important;
+        width: 100% !important;
+        height: 60px !important;
+        top: 0 !important;
+        left: 0 !important;
+        background: #373434 !important;
+        z-index: 100 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+    }
+
+    .mobile-view .logo { 
+        position: fixed !important;
+        height: 40px !important;
+        left: 15px !important;
+        top: 10px !important;
+        z-index: 101 !important;
+        width: auto !important;
+        object-fit: contain !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+        opacity: 1 !important;
+    }
+
+    /* 确保logo在任何状态下都不会有动画 */
+    .mobile-view .logo:hover,
+    .mobile-view .logo:active,
+    .mobile-view .logo:focus {
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .mobile-view .left-nav {
+        position: fixed !important;
+        top: 60px !important;
+        left: 0 !important;
+        width: 100% !important;
+        padding: 15px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        box-sizing: border-box !important;
+        background: #fff !important;
+        z-index: 99 !important;
+    }
+
+    /* 创建一个主滚动容器 - 仅移动端 */
+    .mobile-view .main-content {
+        position: fixed !important;
+        top: 280px !important;  /* 增加顶部间距，与 history 页面保持一致 */
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        background: #fff !important;
+        padding: 15px !important;
+        height: calc(100vh - 300px) !important;  /* 调整高度计算 */
+        /* 隐藏滚动条 */
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+    }
+
+    /* 移动端特定的内容样式 */
+    .mobile-view .business-content {
+        display: none !important; /* 隐藏PC端的内容容器 */
+    }
+
+    /* 移动端的内容样式 */
+    .mobile-view .content-section {
+        padding-top: 15px !important;
+        padding-right: 15px !important;
+        padding-bottom: 15px !important;
+        padding-left: 15px !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 内容区域容器 */
+    .mobile-view .container {
+        width: 100% !important;
+        position: relative !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 文字样式 */
+    .vertical-text {
+        writing-mode: horizontal-tb !important;
+        font-size: 1rem !important;
+        color: #fff !important;
+        margin: 0 !important;
+        position: absolute !important;
+        right: 15px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        letter-spacing: 1px !important;
+        font-weight: normal !important;
+        text-align: right !important;
+    }
+
+    /* 导航项目 */
+    .nav-box.grid-style {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 300/160;
+        position: relative;
+        cursor: pointer;
+        border: none;
+    }
+
+    /* 导航图片 */
+    .nav-box.grid-style img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        max-width: 100% !important;
+        max-height: 100% !important;
+    }
+
+    /* 隐藏hover和active状态的图片 */
+    .nav-box.grid-style .overlay-images,
+    .nav-box.grid-style .overlay-top,
+    .nav-box.grid-style .overlay-bottom {
+        display: none !important;
+    }
+
+    /* 默认显示第一张图片，点击后显示第二张 */
+    .nav-box.grid-style .default-image {
+        opacity: 1 !important;
+        z-index: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+        transform: translate(-50%, -50%) scale(1) !important;
+    }
+
+    .nav-box.grid-style .hover-image {
+        opacity: 0 !important;
+        z-index: 2 !important;
+        visibility: visible !important;
+        display: block !important;
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) scale(1) !important;
+    }
+
+    .nav-box.grid-style.active .default-image {
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+
+    .nav-box.grid-style.active .hover-image {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    /* 页面标题 */
+    .page-title {
+        display: none; /* 因为标题已经在黑色区域显示 */
+    }
+
+    /* index页面样式 */
+    .index-page .container {
+        padding: 10px 15px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;  /* 高度适应内容 */
+        max-height: 100%;    /* 但不超过视窗高度 */
+    }
+
+    /* 标题样式 */
+    .index-page .header {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .index-page .header h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .index-page .subtitle {
+        font-size: 14px;
+    }
+
+    /* 网格容器 */
+    .index-page .grid-container,
+    .grid-container {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+        width: 100% !important;
+        max-width: 360px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        height: auto !important;
+        margin-bottom: 0 !important;  /* 移除底部多余空间 */
+    }
+
+    /* 网格项目 */
+    .index-page .grid-item,
+    .grid-item {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 300/160 !important;
+        position: relative !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-width: unset !important;
+        max-width: none !important;
+        transform: none !important;
+    }
+
+    /* 图片样式 */
+    .index-page .grid-item .grid-image,
+    .grid-item .grid-image {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 隐藏其他状态的图片 */
+    .index-page .grid-item .hover-image,
+    .index-page .grid-item .overlay-images,
+    .index-page .grid-item .overlay-top,
+    .index-page .grid-item .overlay-bottom {
+        display: none;
+    }
+
+    /* 移除所有hover效果 */
+    .index-page .grid-item:hover .default-image,
+    .index-page .grid-item:hover .hover-image,
+    .index-page .grid-item.active .overlay-images {
+        opacity: 1;
+    }
+
+    /* history页面特定样式 */
+    .history-page .container {
+        width: 100% !important;
+        height: 100% !important;
+        transform: none !important;
+        overflow-y: auto !important;
+        padding-top: 60px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .history-page .left-nav {
+        position: relative !important;
+        width: 100% !important;
+        margin-top: 0px !important; /* 添加额外的顶部间距 */
+        padding: 15px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+        left: auto !important;
+        top: auto !important;
+    }
+
+    .history-page .business-content {
+        position: relative !important;
+        width: 100% !important;
+        padding: 15px !important;
+        margin-top: 15px !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        height: auto !important;
+    }
+
+    /* 导航项目样式 */
+    .history-page .nav-box.grid-style {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 300/160 !important;
+    }
+
+    .history-page .nav-box.grid-style img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        transform: translate(-50%, -50%) scale(1) !important;
+    }
+
+    /* 只隐藏overlay图片 */
+    .history-page .nav-box.grid-style .overlay-images {
+        display: none !important;
+    }
+
+    /* 移动端显示内容容器 */
+    .history-page .history-content {
+        position: fixed !important;
+        top: 250px !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        background: #fff !important;
+        z-index: 1 !important;
+        padding: 20px 15px !important;
+        box-sizing: border-box !important;
+        -webkit-overflow-scrolling: touch !important;
+        /* 隐藏滚动条 */
+        scrollbar-width: none !important;  /* Firefox */
+        -ms-overflow-style: none !important;  /* IE and Edge */
+    }
+
+    /* 隐藏 Webkit 浏览器的滚动条 */
+    .history-page .history-content::-webkit-scrollbar,
+    .business-page .main-content::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    /* 确保内容区域正确显示 */
+    .history-page .history-section {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* 时间线容器 */
+    .history-page .timeline-container {
+        position: relative !important;
+        width: 100% !important;
+        background: #fff !important;
+        margin: 0 auto !important;
+        height: auto !important;
+        padding-top: 0 !important;  /* 移除顶部内边距 */
+    }
+
+    /* 时间线样式 */
+    .history-page .timeline {
+        padding: 10px !important;
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        height: auto !important;
+    }
+
+    /* 确保所有内容容器都不会产生额外空间 */
+    .history-page .history-section,
+    .history-page .timeline-container,
+    .history-page .timeline {
+        min-height: 0 !important;
+        max-height: none !important;
+    }
+
+    /* 中间的垂直线 */
+    .history-page .timeline-line {
+        display: none !important;  /* 隐藏时间线 */
+    }
+
+    /* 时间点项目 */
+    .history-page .year-item:first-child {
+        margin-top: 0 !important;  /* 第一个项目移除顶部边距 */
+    }
+
+    .history-page .year-item {
+        position: relative !important;
+        margin: 0px 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    /* 时间文字 */
+    .history-page .year {
+        width: 40px !important;
+        text-align: right !important;
+        padding-right: 15px !important;
+        font-size: 0.8125rem !important;  /* 13px */
+        color: #373434 !important;
+        font-weight: bold !important;
+        flex-shrink: 0 !important;
+        position: absolute !important;
+        left: 0 !important;
+    }
+
+    /* 圆点 */
+    .history-page .dot {
+        position: absolute !important;
+        left: 55px !important;
+        top: 50% !important;
+        width: 10px !important;
+        height: 10px !important;
+        background: #373434 !important;
+        border-radius: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        z-index: 2 !important;
+    }
+
+    /* 圆点外圈 */
+    .history-page .dot::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 16px;
+        height: 16px;
+        border: 1px solid #373434;
+        border-radius: 50%;
+    }
+
+    /* 内容区域 */
+    .history-page .content,
+    .history-page .content.left,
+    .history-page .content.right {
+        margin-left: 70px !important;
+        padding: 15px !important;
+        background: #fff !important;
+        border: 1px solid #373434 !important;
+        width: calc(100% - 70px) !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        display: block !important;
+        font-size: 0.8125rem !important;  /* 13px */
+        left: auto !important;
+        right: auto !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* 内容标题和文本 */
+    .history-page .content .title,
+    .business-page .content-section .title,
+    .business-page .si-content h2,
+    .business-page .si-content h3,
+    .business-page .content-section h2,
+    .business-page .content-section h3 {
+        font-size: 1rem !important;  /* 16px */
+        font-weight: bold !important;
+        margin-bottom: 0.5rem !important;
+        color: #373434 !important;
+    }
+
+    /* 内容文本 */
+    .history-page .content .text,
+    .business-page .content-section .text,
+    .business-page .content-section p,
+    .business-page .si-content p,
+    .business-page .stage-content p {
+        font-size: 0.8125rem !important;  /* 13px */
+        line-height: 1.5 !important;
+        color: #373434 !important;
+        display: block !important;
+        white-space: normal !important;
+        width: 100% !important;
+        text-align: left !important;
+    }
+
+    /* 强制所有内容使用相同的样式 */
+    .history-page .content * {
+        font-family: inherit !important;
+        text-align: left !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+    }
+
+    /* 移除所有可能的浮动和定位 */
+    .history-page .content *,
+    .history-page .content.left *,
+    .history-page .content.right * {
+        float: none !important;
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
+    }
+
+    /* 统一内容框的伪元素样式 */
+    .history-page .content::before,
+    .history-page .content::after,
+    .history-page .content.left::before,
+    .history-page .content.left::after,
+    .history-page .content.right::before,
+    .history-page .content.right::after {
+        display: none !important;  /* 隐藏所有三角形 */
+    }
+
+    /* 防止内容溢出 */
+    .history-page * {
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 最后一个内容项去除底部间距 */
+    .history-page .year-item:last-child .content {
+        margin-bottom: 0 !important;  /* 移除最后一项的底部间距 */
+    }
+
+    /* Business 页面特定样式 */
+    .business-page .container {
+        width: 100% !important;
+        height: 100% !important;
+        transform: none !important;
+        overflow-y: auto !important;
+        padding-top: 60px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .business-page .left-nav {
+        position: relative !important;
+        width: 100% !important;
+        margin-top: 0px !important;
+        padding: 15px !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+        left: auto !important;
+        top: auto !important;
+    }
+
+    /* 导航项目样式 */
+    .business-page .nav-box.grid-style {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 300/160 !important;
+    }
+
+    .business-page .nav-box.grid-style img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        transform: translate(-50%, -50%) scale(1) !important;
+    }
+
+    /* 只隐藏overlay图片 */
+    .business-page .nav-box.grid-style .overlay-images {
+        display: none !important;
+    }
+
+    /* 移动端首页背景 */
+    .index-page {
+        background: #fff !important;  /* 移动端使用纯白背景 */
+    }
+
+    /* 基础字体大小设置 - 以 375px 屏宽为基准 */
+    html {
+        font-size: 16px !important;  /* 1rem = 16px */
+    }
+
+    /* 响应式字体大小 */
+    @media screen and (max-width: 375px) {
+        html {
+            font-size: calc(16px * (375 / 375)) !important;
+        }
+    }
+
+    @media screen and (min-width: 376px) and (max-width: 414px) {
+        html {
+            font-size: calc(16px * (414 / 375)) !important;
+        }
+    }
+
+    /* SI内容区域的特殊标题 */
+    .business-page .stage-card .stage-content h3,
+    .business-page .si-content h2,
+    .business-page .si-content h3,
+    .business-page .stage-content h3,
+    .business-page .content-section h2,
+    .business-page .content-section h3 {
+        font-size: 1rem !important;  /* 16px */
+        font-weight: bold !important;
+        margin-bottom: 0.5rem !important;
+        color: #373434 !important;
+        line-height: 1.4 !important;
+    }
+
+    /* SI内容区域的文本 */
+    .business-page .si-content p,
+    .business-page .stage-content p,
+    .business-page .content-section p,
+    .business-page .si-content div,
+    .business-page .stage-content div,
+    .business-page .content-section div {
+        font-size: 0.8125rem !important;  /* 13px */
+        line-height: 1.5 !important;
+        color: #373434 !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* 确保所有文本内容使用正确的字体大小 */
+    .business-page .main-content *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+        font-size: 0.8125rem !important;
+    }
+
+    /* 确保所有标题使用正确的字体大小 */
+    .business-page .main-content h1,
+    .business-page .main-content h2,
+    .business-page .main-content h3,
+    .business-page .main-content h4,
+    .business-page .main-content h5,
+    .business-page .main-content h6 {
+        font-size: 1rem !important;
+    }
+
+    /* 移动端显示移动端容器，隐藏PC端容器 */
+    .pc-content {
+        display: none !important;
+    }
+    .mobile-content {
+        display: block !important;
+    }
+
+    /* 防止移动端切换时的闪烁 */
+    .container {
+        transition: none !important;
+    }
+    
+    /* 确保移动端样式立即生效 */
+    .mobile-view {
+        transition: none !important;
+    }
+    
+    /* 优化移动端内容显示 */
+    .mobile-content {
+        opacity: 1 !important;
+        transition: none !important;
+    }
+}
+
+/* 超小屏幕适配 */
+@media screen and (max-width: 480px) {
+    .index-page .grid-container {
+        gap: 10px;
+        max-width: 300px;
+    }
+
+    .index-page .header h1 {
+        font-size: 20px;
+    }
+
+    .index-page .subtitle {
+        font-size: 12px;
+    }
+
+    .left-nav {
+        padding: 70px 10px 10px;
+        gap: 8px;
+    }
+
+    .vertical-text {
+        font-size: 16px;
+    }
+
+    .logo {
+        height: 35px;
+    }
+}
+
+/* 移除所有可点击元素的点击效果 */
+.grid-image,
+.default-image,
+.hover-image,
+.overlay-top,
+.overlay-bottom {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    outline: none;
+    user-select: none;
+}
+
+/* PC端样式 */
+@media screen and (min-width: 769px) {
+    /* 在PC端隐藏移动端内容 */
+    .mobile-content {
+        display: none !important;
+    }
+
+    /* 确保PC端背景定位正确 */
+    .home-container::before {
+        top: 4% !important;
+        /* left: 5% !important; */
+        width: 30% !important;
+        height: 200px !important;
+        position: absolute !important;
+    } 
+
+    /* 确保PC端背景定位正确 - after伪元素 */
+    .home-container::after {
+        bottom: 13% !important;
+        right: -8% !important;
+        width: 116% !important;
+        height: 200px !important;
+        position: absolute !important;
+    }
+
+    .container {
+        transition: transform 0.2s ease-out;
+    }
+}
+
+/* 移动端样式 */
+@media screen and (max-width: 768px) {
+    /* 在移动端隐藏PC端内容 */
+    .pc-content {
+        display: none !important;
+    }
+    
+    .mobile-content {
+        display: block !important;
+    }
+
+    /* 移动端隐藏首页背景伪元素 */
+    .home-container::before,
+    .home-container::after {
+        display: none !important;
+    }
+}
