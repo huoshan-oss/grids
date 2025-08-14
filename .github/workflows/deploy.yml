@@ -1,0 +1,40 @@
+name: Sync Feishu Data and Deploy
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # 每30分钟同步一次
+  workflow_dispatch:        # 允许手动触发
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Sync Feishu Data
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+        run: python feishu_sync.py
+
+      - name: Deploy to Sakura via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.SAKURA_FTP_HOST }}
+          username: ${{ secrets.SAKURA_USER }}
+          password: ${{ secrets.SAKURA_PASSWORD }}
+          local-dir: ./
+          server-dir: /home/aiotcenter/www/grids  # 替换为实际部署路径
+          exclude: |
+            **/node_modules/*
+            .git/*
+            .github/*
